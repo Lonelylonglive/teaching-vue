@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="dell" @click="handleClick">
-        <button @click="handleClick"></button>
+        <button @click="handleClick">点我+1</button>
         {{count}}
     </div>
   </div>
