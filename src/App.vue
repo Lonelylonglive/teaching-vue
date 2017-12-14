@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <div class="dell" @click="handleClick">{{message}}</div>
+    <div class="dell">
+      <button @click="handleClick">点击加1</button>
+      {{count}}
+    </div>
   </div>
 </template>
 
@@ -9,12 +12,12 @@
     name: 'app',
     data () {
       return {
-        message: 'hello world'
+        count: 1
       }
     },
     methods: {
       handleClick () {
-        this.message = 'bye world'
+        this.count ++
       }
     }
   }
