@@ -1,8 +1,8 @@
 <template>
   <div>
     <header class="header">
-      <div class="back"><i class="iconfont icon-jiantou-copy"></i></div>
-      <div class="search"><i class="iconfont icon-shuaxin"></i><a href="#" class="prompt">输入城市/景点/游玩主题</a></div>
+      <div class="back">返回</div>
+      <div class="search"><a href="#" class="prompt">输入城市/景点/游玩主题</a></div>
       <div class="city">城市</div>
     </header>
 
