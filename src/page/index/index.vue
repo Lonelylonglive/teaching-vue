@@ -1,9 +1,9 @@
 <template>
   <div>
     <header class="header">
-      <div class="back iconfont">&#xe624;</div>
-      <div class="search"><a href="#" class="prompt">输入城市/景点/游玩主题</a></div>
-      <div class="city">城市</div>
+      <div class="back iconfont">&#xe607;</div>
+      <div class="search"><a href="#" class="prompt"><i class="icon-search iconfont">&#xe60d;</i><span class="search-con">输入城市/景点/游玩主题</span></a></div>
+      <div class="city"><span class="area">乌鲁木齐</span></div>
     </header>
 
     <swiper :options="swiperOption">
@@ -21,10 +21,12 @@
           <div v-for="item in pageInfo" :key="item.id" class="icon-item">
             <div class="icon-img-con">
               <img  class="icon-img" :src="item.imgUrl"/>
+              <div class="keyword">{{item.title}}</div>
             </div>
           </div>
         </div>
       </swiper-slide>
+      <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
 
   </div>
@@ -89,30 +91,52 @@
     display: flex;
     background: #05bad5;
     color: #fff;
+    height:0.88rem;
   }
   .back {
     width: .64rem;
     line-height: .86rem;
     text-align: center;
+    font-size: .40rem;
   }
   .search {
     flex: 1;
     margin: .14rem .18rem;
     background: #fff;
     border-radius: .1rem;
-  }
-  .icon-shuaxin {
-    color: #ccc;font-size: 0.26rem;padding:0 0.15rem;
+    padding-left: .2rem;
   }
   .prompt {
-    font-size: 0.26rem;color: #ccc;line-height: 0.6rem;
+    font-size: 0.28rem;
+    color: #e4e7ea;
+    line-height: 0.6rem;
+  }
+  .icon-search {
+    font-size: .32rem;
+    margin-right: .1rem;
+    float: left;
+  }
+  .search-con {
+    display: inline-block;
+    width: 3.6rem;
+    white-space: nowrap;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    float: left;
   }
   .city {
-    width: 1.14rem;
     line-height: .86rem;
-    text-align: left;
+    text-align: center;
   }
-  .city::after{
+  .area {
+    display: inline-block;
+    max-width: 1.1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:clip;
+    margin-right: .6rem;
+  }
+  .city::after {
     content:"";
     display: block;
     width: 0px;
@@ -133,21 +157,33 @@
     width: 100%;
   }
   .icon-wrapper {
-
+  
   }
   .icon-item {
     box-sizing: border-box;
     float: left;
     width: 25%;
-    padding: .4rem;
+    /*padding: .4rem;*/
+    text-align: center;
   }
   .icon-img-con {
     width: 100%;
-    height: 0;
-    padding-bottom: 100%;
+    /*height: .66rem;*/
+    /*height: 0;*/
+    height: 1.3rem;
+    padding-top: .3rem;
+    /*line-height: 1.3rem;*/
+    /*padding-bottom: 100%;*/
+    text-align: center;
   }
   .icon-img {
-    width: 100%;
+    width: .66rem;
+    height: .66rem;
+    /*width: 100%;*/
   }
-
+   .keyword {
+    margin-top: .2rem;
+    font-size: .28rem;
+    text-align: center;
+  } 
 </style>
