@@ -1,7 +1,11 @@
 <template>
   <div id="app">
     <div class="dell" @click="handleClick">
+<<<<<<< HEAD
       {{message}}
+=======
+        {{message}}
+>>>>>>> 20171214-yjm-project
     </div>
   </div>
 </template>
