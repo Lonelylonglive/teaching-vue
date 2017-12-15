@@ -1,11 +1,7 @@
 <template>
   <div id="app">
     <div class="dell" @click="handleClick">
-<<<<<<< HEAD
-      {{message}}
-=======
         {{message}}
->>>>>>> 20171214-yjm-project
     </div>
   </div>
 </template>
@@ -15,12 +11,12 @@
     name: 'app',
     data () {
       return {
-        message: "hello"
+        message: 'hello world'
       }
     },
     methods: {
       handleClick () {
-        this.message = "bye"
+        this.message = 'merge merge merge merge'
       }
     }
   }
