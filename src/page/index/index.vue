@@ -1,7 +1,7 @@
 <template>
   <div>
     <header class="header">
-      <div class="back">返回</div>
+      <div class="back iconfont">&#xe624;</div>
       <div class="search"><a href="#" class="prompt">输入城市/景点/游玩主题</a></div>
       <div class="city">城市</div>
     </header>
@@ -47,9 +47,6 @@ export default {
     width: .64rem;
     line-height: .86rem;
     text-align: center;
-  }
-  .icon-jiantou-copy {
-    font-size: 0.4rem;
   }
   .search {
     flex: 1;
