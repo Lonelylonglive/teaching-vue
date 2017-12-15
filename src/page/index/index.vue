@@ -1,8 +1,8 @@
 <template>
   <div>
     <header class="header">
-      <div class="back">返回</div>
-      <div class="search"></div>
+      <div class="back"><i class="iconfont icon-jiantou-copy"></i></div>
+      <div class="search"><i class="iconfont icon-shuaxin"></i><a href="#" class="prompt">输入城市/景点/游玩主题</a></div>
       <div class="city">城市</div>
     </header>
 
@@ -46,6 +46,10 @@ export default {
   .back {
     width: .64rem;
     line-height: .86rem;
+    text-align: center;
+  }
+  .icon-jiantou-copy {
+    font-size: 0.4rem;
   }
   .search {
     flex: 1;
@@ -53,10 +57,27 @@ export default {
     background: #fff;
     border-radius: .1rem;
   }
+  .icon-shuaxin {
+    color: #ccc;font-size: 0.26rem;padding:0 0.15rem;
+  }
+  .prompt {
+    font-size: 0.26rem;color: #ccc;line-height: 0.6rem;
+  }
   .city {
     width: 1.14rem;
     line-height: .86rem;
-    text-align: center;
+    text-align: left;
+  }
+  .city::after{
+    content:"";
+    display: block;
+    width: 0px;
+    height: 0px;
+    border: 0.1rem solid #fff;
+    border-color: white transparent transparent transparent;
+    position: absolute;
+    right: 0.3rem;
+    top: 0.36rem;
   }
   .swiper-img-con {
     width: 100%;
@@ -64,4 +85,5 @@ export default {
   .swiper-img {
     width: 100%;
   }
+
 </style>

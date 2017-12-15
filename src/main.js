@@ -3,6 +3,7 @@ import App from './App'
 import router from './router'
 import './assets/style/reset.css'
 import 'swiper/dist/css/swiper.css'
+import './assets/iconfont/iconfont.css'
 import VueSwiper from 'vue-awesome-swiper'
 
 Vue.config.productionTip = false
