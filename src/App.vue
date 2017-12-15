@@ -1,8 +1,7 @@
 <template>
   <div id="app">
     <div class="dell" @click="handleClick">
-        <button @click="handleClick">点我+1</button>
-        {{count}}
+        {{message}}
     </div>
   </div>
 </template>
@@ -12,12 +11,12 @@
     name: 'app',
     data () {
       return {
-        count: 0
+        message: 'hello world'
       }
     },
     methods: {
       handleClick () {
-        this.count ++
+        this.message = 'bye world'
       }
     }
   }
