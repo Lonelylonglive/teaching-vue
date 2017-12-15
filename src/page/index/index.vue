@@ -7,34 +7,81 @@
     </header>
 
     <swiper :options="swiperOption">
-      <swiper-slide>
+      <swiper-slide v-for="item in swiperInfo" :key="item.id">
         <div class="swiper-img-con">
-          <img  class="swiper-img" src="http://img1.qunarzz.com/piao/fusion/1609/15/630b82d932a3c402.jpg_640x200_862e836b.jpg"/>
-        </div>
-      </swiper-slide>
-      <swiper-slide>
-        <div class="swiper-img-con">
-          <img class="swiper-img" src="http://img1.qunarzz.com/piao/fusion/1712/5c/723bbb93e9683f02.jpg_640x200_7d38c6ad.jpg"/>
+          <img  class="swiper-img" :src="item.imgUrl"/>
         </div>
       </swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
+    </swiper>
+
+    <swiper>
+      <swiper-slide v-for="(pageInfo, index) in pages" :key="index">
+        <div class="icon-wrapper">
+          <div v-for="item in pageInfo" :key="item.id" class="icon-item">
+            <div class="icon-img-con">
+              <img  class="icon-img" :src="item.imgUrl"/>
+            </div>
+          </div>
+        </div>
+      </swiper-slide>
     </swiper>
 
   </div>
 </template>
 
 <script>
-export default {
-  name: 'Index',
-  data () {
-    return {
-      swiperOption: {
-        autoplay: 1000,
-        direction: 'horizontal'
+  export default {
+
+    name: 'Index',
+
+    data () {
+      return {
+        swiperInfo: [],
+        iconInfo: [],
+        swiperOption: {
+          autoplay: 10000,
+          pagination: '.swiper-pagination',
+          loop: true
+        }
       }
+    },
+
+    computed: {
+      pages () {
+        const pages = []
+        this.iconInfo.forEach((value, index) => {
+          let page = Math.floor(index / 8)
+          if (!pages[page]) {
+            pages[page] = []
+          }
+          pages[page].push(value)
+        })
+        return pages
+      }
+    },
+
+    methods: {
+
+      getIndexData () {
+        this.$http.get('/static/index.json')
+          .then(this.handleGetDataSucc.bind(this))
+      },
+
+      handleGetDataSucc (res) {
+        const body = res.body
+        if (body && body.data && body.data.swiper) {
+          this.swiperInfo = body.data.swiper
+          this.iconInfo = body.data.icons
+        }
+      }
+
+    },
+
+    created () {
+      this.getIndexData()
     }
   }
-}
 </script>
 
 <style scoped>
@@ -77,9 +124,29 @@ export default {
     top: 0.36rem;
   }
   .swiper-img-con {
+    overflow: hidden;
     width: 100%;
+    height: 0;
+    padding-bottom: 31.25%;
   }
   .swiper-img {
+    width: 100%;
+  }
+  .icon-wrapper {
+
+  }
+  .icon-item {
+    box-sizing: border-box;
+    float: left;
+    width: 25%;
+    padding: .4rem;
+  }
+  .icon-img-con {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+  }
+  .icon-img {
     width: 100%;
   }
 

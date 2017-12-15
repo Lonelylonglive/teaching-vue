@@ -5,9 +5,11 @@ import './assets/style/reset.css'
 import 'swiper/dist/css/swiper.css'
 import './assets/style/iconfont/iconfont.css'
 import VueSwiper from 'vue-awesome-swiper'
+import VueResource from 'vue-resource'
 
 Vue.config.productionTip = false
 Vue.use(VueSwiper)
+Vue.use(VueResource)
 
 /* eslint-disable no-new */
 new Vue({
