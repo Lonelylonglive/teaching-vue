@@ -210,8 +210,26 @@
     width: 100%;
   }
 
-
+  .recommend{
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    padding-bottom: 147.73%;
+  }
   .recTittle{
+    box-sizing:border-box;
+    position: relative;
+  }
+  .recTittle:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    background: #e1e1e1;
+    height: 1px;
+    width: 100%;
+    transform: scaleY(.5);
+  }
+  .recTittle h2{
     height: .8rem;
     padding-left: .26rem;
     line-height: .8rem;
@@ -221,6 +239,10 @@
     display: flex;
     flex-direction: column;
     background: #fff;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    padding-bottom: 125.33%;
   }
   .recShowLi{ 
     position: relative;
@@ -230,7 +252,7 @@
     content: "";
     position: absolute;
     bottom: 0;
-    background: #ccc;
+    background: #e1e1e1;
     height: 1px;
     width: 100%;
     transform: scaleY(.5);
