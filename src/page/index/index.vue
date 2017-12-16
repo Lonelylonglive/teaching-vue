@@ -6,7 +6,7 @@
       <div class="city">北京</div>
     </header>
 
-    <swiper :options="swiperOption">
+    <swiper :options="swiperOption" class="swiper-img-con">
       <swiper-slide v-for="item in swiperInfo" :key="item.id">
         <div class="swiper-img-con">
           <img  class="swiper-img" :src="item.imgUrl"/>
@@ -14,8 +14,7 @@
       </swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
-
-    <swiper>
+    <swiper class="iconCon">
       <swiper-slide v-for="(pageInfo, index) in pages" :key="index">
         <div class="icon-wrapper">
           <div v-for="item in pageInfo" :key="item.id" class="icon-item">
@@ -26,8 +25,11 @@
         </div>
       </swiper-slide>
     </swiper>
-    <div class="recommend clearfix">
-      <h2 class="recTittle">热门推销</h2>
+    <div class="recommend">
+      <div  class="recTittle">
+          <h2>热门推销</h2>
+      </div>  
+      <div class="recCon">
         <ul class="recShow">
           <li class="recShowLi" v-for="(item,index) in getIndexRec" :key="item.id">
             <a href="javascript:;">
@@ -44,21 +46,24 @@
             </a>
           </li>
         </ul>
-        <div class="moreRec">
-          <a href="javascript:;">查看所有产品</a>
-        </div>
+      </div>
+      <div class="moreRec">
+        <a href="javascript:;">查看所有产品</a>
+      </div>
     </div>
     <div class="weekends">
-      <div v-for="(item, index) in getWeekend" class="weekendsCon">
-        <div class="pictureBox">
-          <img :src="item.imgUrl" alt="" class="picture">
-        </div>
-        <div class="weekendsInco">
-          <div class="place">{{item.place}}</div>
-          <div class="description">{{item.description}}</div>
-        </div>
+        <h2 class="weekTittle">周末去哪儿</h2>
+      <div v-for="(item, index) in getWeekends" class="weekendsCon">
+        <a href="javascript:;">
+          <div class="pictureBox">
+            <img :src="item.imgUrl" alt="" class="picture">
+          </div>
+          <div class="weekendsInco">
+            <div class="placename">{{item.place}}</div>
+            <div class="description">{{item.description}}</div>
+          </div>
+        </a>
       </div>
-     
     </div>
   </div>
 </template>
@@ -103,7 +108,7 @@
         })
         return IndexRec
       },
-      getWeekend () {
+      getWeekends () {
         const weekends = []
         this.weekends.forEach((value, index) => {
           if (index < 5) {
@@ -140,7 +145,6 @@
 </script>
 
 <style scoped>
-  .clearfix:after{content:".";clear:both;display:block;height:0;overflow:hidden;visibility: hidden;}
   .header {
     display: flex;
     background: #05bad5;
@@ -188,7 +192,7 @@
   .swiper-img {
     width: 100%;
   }
-  .icon-wrapper {
+  .iconCon{
 
   }
   .icon-item {
@@ -205,21 +209,36 @@
   .icon-img {
     width: 100%;
   }
+
+
   .recTittle{
     height: .8rem;
     padding-left: .26rem;
     line-height: .8rem;
     color: #212121;
   }
-  .recShowLi{
-    float: left;
-    padding: .24rem;
-    width: 100%;
-    border-top:0.5px solid #ccc; 
-
+  .recCon{
+    display: flex;
+    flex-direction: column;
+    background: #fff;
   }
-  .recImgBox,.recInfo{
-    float: left;
+  .recShowLi{ 
+    position: relative;
+    width: 100%;
+  }
+  .recShowLi:after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    background: #ccc;
+    height: 1px;
+    width: 100%;
+    transform: scaleY(.5);
+  }
+  .recShowLi a{
+    display: flex;
+    padding: .24rem;
+    box-sizing:border-box;
   }
   .recImgBox{
     margin-right: .2rem;
@@ -259,19 +278,46 @@
   }
   .moreRec{
     width: 100%;
-    border-top:0.5px solid #ccc; 
     height: .88rem;
     line-height: .88rem;
     text-align: center;
-    float: left;
+    background: #fff;
+  }
+  .weekendsCon{
+    background: #fff;
+  }
+  .weekTittle{
+    height: .8rem;
+    line-height: .8rem;
+    color: #212121;
+    padding-left: .26rem;
   }
   .pictureBox{
     width: 100%;
     height: 0;
     overflow: hidden;
-     padding-bottom: 31.25%;
+    padding-bottom: 38%;
   }
   .picture{
     width: 100%;
+  }
+  .weekendsInco{
+    padding: .14rem .2rem .2rem .2rem;
+  }
+  .placename{
+    overflow: hidden;
+    color: #212121;
+    font-size: .28rem;
+    line-height: .48rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .description{
+    overflow: hidden;
+    color: #616161;
+    font-size: .24rem;
+    line-height: .42rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 </style>
