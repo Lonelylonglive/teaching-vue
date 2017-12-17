@@ -10,59 +10,138 @@
       }, {
        "id": "0003",
        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1710/f5/57137c621d75ba02.jpg_640x200_b984ddf7.jpg"
+      }, {
+        "id": "0004",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1711/cd/5ff8869f365e7e02.jpg_640x200_097b1798.jpg"
       }],
       "icons": [{
         "id": "0001",
+        "name": "景点门票",
         "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png"
       },{
         "id": "0002",
-        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png"
+        "name": "动植物园",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/35/2640cab202c41b02.png"
       },{
       "id": "0003",
-      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png"
+      "name": "故宫",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/45/676b67d7078abc02.png"
     },{
       "id": "0004",
-      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png"
+      "name": "一日游",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/a9/ffc620dbda9b9c02.png"
     },{
       "id": "0005",
-      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png"
+      "name": "必游榜单",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/59/569d3c096e542502.png"
     },{
       "id": "0006",
-      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png"
+      "name": "滑雪季",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1711/df/86cbcfc533330d02.png"
     },{
       "id": "0007",
-      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png"
+      "name": "游乐场",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/d0/e09575e66f4aa402.png"
     },{
       "id": "0008",
-      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png"
+      "name": "泡温泉",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1710/a6/83f636bd75ae6302.png"
     },{
       "id": "0009",
-      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png"
+      "name": "自然风光",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/cd/07f33cc087f18d02.png"
     },{
       "id": "00010",
-      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png"
+      "name": "演出",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/17/4bd370f3eb1acd02.png"
     },{
       "id": "00011",
-      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png"
+      "name": "名胜古迹",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/1c/a8a8d9023a814c02.png"
     },{
       "id": "00012",
-      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png"
+      "name": "周边游",
+      "imgUrl": "https://img1.qunarzz.com/piao/fusion/1602/f2/71eb19f77e3f21f7.png"
     },{
       "id": "00013",
-      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png"
+      "name": "城市观光",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/7f/b1ea3c8c7fb6db02.png"
     },{
       "id": "00014",
-      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png"
+      "name": "古北水镇",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/ea/8cb1dce519375d02.png"
     },{
       "id": "00015",
-      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png"
+      "name": "景点讲解",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1707/34/9285073fde1eb702.png"
     },{
       "id": "00016",
-      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png"
-    },{
-      "id": "00017",
-      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png"
-    }
-    ]
+      "name": "全部",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/be/a70e61e1f57ee302.png"
+    }],
+    "caseImg": [{
+        "id": "0001",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1710/a2/e395615b16fb1302.png"
+      },{
+        "id":"0002",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1711/8a/4c62d1a89fc2d602.png"
+      }],
+      "liCon": [{
+        "id": "0001",
+        "name": "故宫",
+        "intro": "东方宫殿建筑代表，世界宫殿建筑典范",
+        "price": "20",
+        "imgUrl": "http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg"
+        },{
+          "id": "0002",
+          "name": "天安门广场",
+          "intro": "我爱北京天安门，天安门上太阳升",
+          "price": "20",
+          "imgUrl": "http://img1.qunarzz.com/sight/p0/1501/f4/f467729126949c3a.water.jpg_140x140_ef235b1c.jpg"
+        },{
+          "id": "0003",
+          "name": "南山滑雪场",
+          "intro": "北京专业级滑雪圣地",
+          "price": "97",
+          "imgUrl": "http://img1.qunarzz.com/sight/p0/1511/d2/d2aec2dfc5aa771290.water.jpg_140x140_abb362a7.jpg"
+        },{
+          "id": "0004",
+          "name": "世界花卉大观园",
+          "intro": "揽天下奇花异草，聚世界经典园林",
+          "price": "33.1",
+          "imgUrl": "http://img1.qunarzz.com/sight/p0/1604/1e/1e75f8e1af9fe81f90.img.jpg_140x140_b555f882.jpg"
+        },{
+          "id": "0005",
+          "name": "颐和园",
+          "intro": "保存完整的一座皇家行宫御苑",
+          "price": "23.5",
+          "imgUrl": "http://img1.qunarzz.com/sight/p0/1505/d2/d274c92de14c93da.water.jpg_140x140_e20be8e0.jpg"
+        }],
+      "where": [{
+        "id": "0001",
+        "imgUrl": "http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg",
+        "name": "温泉·北京",
+        "intro": "细数北京温泉，温暖你的冬天"
+        },{
+        "id": "0002",
+        "name": "北京必游TOP10",
+        "intro": "来北京必去的景点非这些地方莫属",
+        "imgUrl": "http://img1.qunarzz.com/sight/source/1505/aa/7baaf8a851d221.jpg_r_640x214_1431200f.jpg"
+        },{
+        "id": "0003",
+        "name": "皇城·北京",
+        "intro": "数百年的宫廷庙宇，至今依旧威严霸气",
+        "imgUrl": "http://img1.qunarzz.com/sight/source/1505/9e/21df651e19af5d.jpg_r_640x214_3ea5bb38.jpg"
+        },{
+        "id": "0004",
+        "name": "博物馆·北京",
+        "intro": "周末干嘛？北京很多博物馆已经免费开放啦",
+        "imgUrl": "http://img1.qunarzz.com/sight/source/1505/ce/bc89bc2f0e33ea.jpg_r_640x214_3e408453.jpg"
+        },{
+        "id": "0005",
+        "name": "北京最美雪景",
+        "intro": "下雪了，你知道北京哪里最美吗",
+        "imgUrl": "http://img1.qunarzz.com/sight/source/1511/ad/6834f95575feed.jpg_r_640x214_2b7039e2.jpg"
+        }]
   }
 }
