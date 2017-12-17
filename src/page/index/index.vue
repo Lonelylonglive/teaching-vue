@@ -273,6 +273,6 @@
     height: 100%;
   }
   .activity-img{
-    width: 90%;
+    height: 100%;
   }
 </style>
