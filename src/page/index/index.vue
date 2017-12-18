@@ -1,9 +1,9 @@
 <template>
   <div>
     <header class="header">
-      <div class="back iconfont">&#xe624;</div>
-      <div class="search"><a href="#" class="prompt">输入城市/景点/游玩主题</a></div>
-      <div class="city">北京</div>
+      <div class="back iconfont">&#xe720;</div>
+      <div class="search"><a href="#" class="prompt"><i class="icon-search iconfont">&#xe741;</i><span class="search-con">输入城市/景点/游玩主题</span></a></div>
+      <div class="city"><span class="area">{{position}}</span></div>
     </header>
 
     <swiper :options="swiperOption" class="swiper-img-con">
@@ -14,22 +14,25 @@
       </swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
-    
-    <swiper class="iconCon">
+
+    <swiper :options="swiperOption" class="swiper-icon">
       <swiper-slide v-for="(pageInfo, index) in pages" :key="index">
         <div class="icon-wrapper">
           <div v-for="item in pageInfo" :key="item.id" class="icon-item">
             <div class="icon-img-con">
               <img  class="icon-img" :src="item.imgUrl"/>
+              <div class="keyword">{{item.title}}</div>
             </div>
           </div>
         </div>
       </swiper-slide>
+      <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
+
     <div class="recommend">
       <div  class="recTittle">
           <h2>热门推销</h2>
-      </div>  
+      </div>
       <div class="recCon">
         <ul class="recShow">
           <li class="recShowLi" v-for="(item,index) in getIndexRec" :key="item.id">
@@ -41,7 +44,7 @@
                 <div class="recItemName">{{item.name}}</div>
                 <div class="recDescription">{{item.description}}</div>
                 <div class="recItemPrice">
-                  ￥<em class="price">{{item.price}}</em><i>起</i>
+                  &yen;<em class="price">{{item.price}}</em><i>起</i>
                 </div>
               </div>
             </a>
@@ -65,8 +68,23 @@
           </div>
         </a>
       </div>
+
+
+    <div class="activity-list">
+      <div class="list-item item-right"><i class="iconfont position">&#xe6ec;</i><span>定位失败</span></div>
+      <div class="list-item"><i class="iconfont position">&#xe667;</i><span>{{activityList}}</span></div>
+    </div>
+
+    <div class="activity-con">
+        <div class="con-item item-right">
+          <img :src="imgSrc[0]" alt="" class="activity-img">
+        </div>
+        <div class="con-item">
+          <img :src="imgSrc[1]" alt="" class="activity-img">
+        </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -77,15 +95,18 @@
     data () {
       return {
         recommendNum: 5,
+        position: '',
         swiperInfo: [],
         iconInfo: [],
         recommend: [],
         weekends: [],
         swiperOption: {
-          autoplay: 10000,
+          autoplay: 4000,
           pagination: '.swiper-pagination',
           loop: true
-        }
+        },
+        activityList: '',
+        imgSrc: []
       }
     },
 
@@ -130,16 +151,27 @@
 
       handleGetDataSucc (res) {
         const body = res.body
+        const area = body.data.position
         if (body && body.data && body.data.swiper) {
           this.swiperInfo = body.data.swiper
           this.iconInfo = body.data.icons
           this.recommend = body.data.city.北京.recommend
           this.weekends = body.data.city.北京.weekends
+          if (area.length > 4) {
+            this.position = area.substr(0, 4)
+          } else {
+            this.position = area
+          }
+          this.activityList = body.data.activityList
+          if (body.data.activityImg) {
+            const imgArr = body.data.activityImg
+            imgArr.forEach((value, index) => {
+              this.imgSrc.push(imgArr[index].imgUrl)
+            })
+          }
         }
       }
-
     },
-
     created () {
       this.getIndexData()
     }
@@ -151,30 +183,53 @@
     display: flex;
     background: #05bad5;
     color: #fff;
+    height:0.88rem;
   }
   .back {
     width: .64rem;
     line-height: .86rem;
     text-align: center;
+    font-size: .40rem;
   }
   .search {
     flex: 1;
     margin: .14rem .18rem;
     background: #fff;
     border-radius: .1rem;
-  }
-  .icon-shuaxin {
-    color: #ccc;font-size: 0.26rem;padding:0 0.15rem;
+    padding-left: .2rem;
   }
   .prompt {
-    font-size: 0.26rem;color: #ccc;line-height: 0.6rem;
+    position: relative;
+    font-size: 0.28rem;
+    color: #e4e7ea;
+    line-height: 0.6rem;
+  }
+  .icon-search {
+    position: absolute;
+    left: .2rem;
+    top: 50%;
+    font-size: .32rem;
+    margin-right: .1rem;
+  }
+  .search-con {
+    position: absolute;
+    left: .6rem;
+    top: 50%;
+    display: inline-block;
+    width: 3.4rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .city {
-    width: 1.14rem;
     line-height: .86rem;
-    text-align: left;
+    text-align: center;
   }
-  .city::after{
+  .area {
+    display: inline-block;
+    margin-right: .6rem;
+  }
+  .city::after {
     content:"";
     display: block;
     width: 0px;
@@ -194,24 +249,97 @@
   .swiper-img {
     width: 100%;
   }
-  .iconCon{
-
-  }
   .icon-item {
     box-sizing: border-box;
     float: left;
     width: 25%;
-    padding: .4rem;
+    text-align: center;
   }
   .icon-img-con {
     width: 100%;
-    height: 0;
-    padding-bottom: 100%;
+    height: 1.3rem;
+    padding-top: .3rem;
+    text-align: center;
   }
   .icon-img {
-    width: 100%;
+    width: .66rem;
+    height: .66rem;
   }
-
+  .keyword {
+    margin-top: .2rem;
+    font-size: .28rem;
+    text-align: center;
+  }
+  .swiper-icon {
+    height: 3.8rem;
+    background: #fff;
+  }
+  .activity-list {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    height: .98rem;
+    margin-bottom: .2rem;
+    background: #fff;
+  }
+  .activity-list:after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background: #e1e1e1;
+    transform: scaleY(.5);
+    top: 0;
+  }
+  .list-item {
+    width: 50%;
+    height: 100%;
+    line-height: .98rem;
+  }
+  .item-right {
+    position: relative;
+  }
+  .item-right:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background: #e1e1e1;
+    transform: scaleX(.5);
+    right: 0;
+  }
+  .position {
+    font-size: .36rem;
+  }
+  .activity-con {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    height: 1.38rem;
+    background: #fff;
+  }
+  .activity-con:after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background: #e1e1e1;
+    transform: scaleY(.5);
+    top: 0;
+  }
+  .con-item {
+    width: 50%;
+    height: 100%;
+  }
+  .activity-img{
+    width: 90%;
+  }
   .recommend{
     overflow: hidden;
     width: 100%;
@@ -246,7 +374,7 @@
     height: 0;
     padding-bottom: 125.33%;
   }
-  .recShowLi{ 
+  .recShowLi{
     position: relative;
     width: 100%;
   }
