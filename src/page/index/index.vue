@@ -6,29 +6,11 @@
       <div class="city"><span class="area">{{position}}</span></div>
     </header>
 
-    <swiper :options="swiperOption" class="swiper-img-con">
-      <swiper-slide v-for="item in swiperInfo" :key="item.id">
-        <div class="swiper-img-con">
-          <img  class="swiper-img" :src="item.imgUrl"/>
-        </div>
-      </swiper-slide>
-      <div class="swiper-pagination"  slot="pagination"></div>
-    </swiper>
+    <index-swiper :swiperInfo="swiperInfo"></index-swiper> 
 
-    <swiper :options="iconOption" class="swiper-icon">
-      <swiper-slide v-for="(pageInfo, index) in pages" :key="index">
-        <div class="icon-wrapper">
-          <div v-for="item in pageInfo" :key="item.id" class="icon-item">
-            <div class="icon-img-con">
-              <img  class="icon-img" :src="item.imgUrl"/>
-              <div class="keyword">{{item.title}}</div>
-            </div>
-          </div>
-        </div>
-      </swiper-slide>
-      <div class="swiper-pagination"  slot="pagination"></div>
-    </swiper>
+    <icon-swiper :pages="pages"></icon-swiper> 
 
+   
     <div class="activity-list">
       <div class="list-item item-right"><i class="iconfont position">&#xe6ec;</i><span class="getposition">定位失败</span></div>
       <div class="list-item"><i class="iconfont position">&#xe667;</i><span class="addsName">{{activityList}}</span></div>
@@ -42,54 +24,30 @@
           <img :src="imgSrc[1]" alt="" class="activity-img">
         </div>
     </div>
+  
+    <index-recommend :getIndexRec="getIndexRec"></index-recommend>
 
-    <div class="recommend">
-      <div  class="recTittle">
-          <h2>热门推销</h2>
-      </div>
-      <div class="recCon">
-        <ul class="recShow">
-          <li class="recShowLi" v-for="(item,index) in getIndexRec" :key="item.id">
-            <a href="javascript:;">
-              <div class="recImgBox">
-                <img class="recImg" :src="item.imgUrl">
-              </div>
-              <div class="recInfo">
-                <div class="recItemName">{{item.name}}</div>
-                <div class="recDescription">{{item.description}}</div>
-                <div class="recItemPrice">
-                  &yen;<em class="price">{{item.price}}</em><i>起</i>
-                </div>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="moreRec">
-        <a href="javascript:;">查看所有产品</a>
-      </div>
-    </div>
+    <index-weekends :getWeekends="getWeekends"></index-weekends> 
 
-    <div class="weekends">
-      <h2 class="weekTittle">周末去哪儿</h2>
-      <div v-for="(item, index) in getWeekends" :key="index" class="weekendsCon">
-        <a href="javascript:;">
-          <div class="pictureBox">
-            <img :src="item.imgUrl" alt="" class="picture">
-          </div>
-          <div class="weekendsInco">
-            <div class="placename">{{item.place}}</div>
-            <div class="description">{{item.description}}</div>
-          </div>
-        </a>
-      </div>
-    </div>   
+    
+
+    
 
   </div>
 </template>
 
 <script>
+  import IndexSwiper from './IndexSwiper'
+  import IconSwiper from './IconSwiper'
+  import IndexRecommend from './IndexRecommend'
+  import IndexWeekends from './IndexWeekends'
   export default {
+    components: {
+      IndexSwiper,
+      IconSwiper,
+      IndexRecommend,
+      IndexWeekends
+    },
 
     name: 'Index',
 
@@ -101,14 +59,6 @@
         iconInfo: [],
         recommend: [],
         weekends: [],
-        swiperOption: {
-          loop: true,
-          autoplay: 1000,
-          pagination: '.swiper-pagination'
-        },
-        iconOption: {
-          pagination: '.swiper-pagination'
-        },
         activityList: '',
         imgSrc: []
       }
@@ -244,44 +194,7 @@
     right: 0.3rem;
     top: 0.36rem;
   }
-  .swiper-img-con {
-    overflow: hidden;
-    width: 100%;
-    height: 0;
-    padding-bottom: 31.25%;
-  }
-  .swiper-img {
-    width: 100%;
-  }
-  .icon-item {
-    box-sizing: border-box;
-    float: left;
-    width: 25%;
-    text-align: center;
-  }
-  .icon-img-con {
-    width: 100%;
-    height: 1.3rem;
-    padding-top: .3rem;
-    text-align: center;
-  }
-  .icon-img {
-    width: .66rem;
-    height: .66rem;
-  }
-  .keyword {
-    width: 1.8rem;
-    margin-top: .2rem;
-    font-size: .28rem;
-    text-align: center;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-  .swiper-icon {
-    height: 3.8rem;
-    background: #fff;
-  }
+  
   .activity-list {
     box-sizing: border-box;
     position: relative;
@@ -366,140 +279,6 @@
     height: 0;
     padding-bottom: 147.73%;
   }*/
-  .recTittle {
-    box-sizing:border-box;
-    position: relative;
-  }
-  .recTittle:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    background: #e1e1e1;
-    height: 1px;
-    width: 100%;
-    transform: scaleY(.5);
-  }
-  .recTittle h2 {
-    height: .8rem;
-    width: 6rem;
-    padding-left: .26rem;
-    line-height: .8rem;
-    color: #212121;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-  .recCon {
-    display: flex;
-    flex-direction: column;
-    background: #fff;
-    /*overflow: hidden;
-    width: 100%;
-    height: 0;
-    padding-bottom: 129.33%;*/
-  }
-  .recShowLi {
-    position: relative;
-    width: 100%;
-  }
-  .recShowLi:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    background: #e1e1e1;
-    height: 1px;
-    width: 100%;
-    transform: scaleY(.5);
-  }
-  .recShowLi a {
-    display: flex;
-    padding: .24rem;
-    box-sizing:border-box;
-  }
-  .recImgBox {
-    margin-right: .2rem;
-  }
-  .recImg {
-    height: 1.4rem;
-    width: 1.4rem;
-  }
-  .recItemName {
-    width: 4rem;
-    overflow: hidden;
-    color: #212121;
-    font-size: .3rem;
-    margin-bottom: .1rem;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-  .recDescription {
-    overflow: hidden;
-    margin-bottom: .1rem;
-    height: .4rem;
-    width: 5rem;
-    line-height: .4rem;
-    color: #9e9e9e;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-  .recItemPrice {
-    font-size: .2rem;
-    color: #ff8300;
-  }
-  .price {
-    font-size: .36rem;
-    margin: 0 .06rem;
-  }
-  .recItemPrice i {
-    color: #9e9e9e;
-    font-size: .24rem;
-  }
-  .moreRec {
-    width: 100%;
-    height: .88rem;
-    line-height: .88rem;
-    text-align: center;
-    background: #fff;
-  }
-  .weekendsCon {
-    background: #fff;
-  }
-  .weekTittle {
-    height: .8rem;
-    width: 6rem;
-    line-height: .8rem;
-    color: #212121;
-    padding-left: .26rem;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-  .pictureBox {
-    width: 100%;
-    height: 0;
-    overflow: hidden;
-    padding-bottom: 38%;
-  }
-  .picture {
-    width: 100%;
-  }
-  .weekendsInco {
-    padding: .14rem .2rem .2rem .2rem;
-  }
-  .placename {
-    color: #212121;
-    font-size: .28rem;
-    line-height: .48rem;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-  .description {
-    overflow: hidden;
-    color: #616161;
-    font-size: .24rem;
-    line-height: .42rem;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
+  
+  
 </style>
