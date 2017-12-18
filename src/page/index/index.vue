@@ -14,6 +14,7 @@
       </swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
+    
     <swiper class="iconCon">
       <swiper-slide v-for="(pageInfo, index) in pages" :key="index">
         <div class="icon-wrapper">
@@ -75,6 +76,7 @@
 
     data () {
       return {
+        recommendNum: 5,
         swiperInfo: [],
         iconInfo: [],
         recommend: [],
@@ -102,7 +104,7 @@
       getIndexRec () {
         const IndexRec = []
         this.recommend.forEach((value, index) => {
-          if (index < 5) {
+          if (index < this.recommendNum) {
             IndexRec.push(value)
           }
         })
@@ -111,7 +113,7 @@
       getWeekends () {
         const weekends = []
         this.weekends.forEach((value, index) => {
-          if (index < 5) {
+          if (index < this.recommendNum) {
             weekends.push(value)
           }
         })
