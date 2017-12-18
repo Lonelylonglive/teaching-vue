@@ -15,7 +15,7 @@
       <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
 
-    <swiper :options="swiperOption" class="swiper-icon">
+    <swiper :options="iconOption" class="swiper-icon">
       <swiper-slide v-for="(pageInfo, index) in pages" :key="index">
         <div class="icon-wrapper">
           <div v-for="item in pageInfo" :key="item.id" class="icon-item">
@@ -28,6 +28,20 @@
       </swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
+
+    <div class="activity-list">
+      <div class="list-item item-right"><i class="iconfont position">&#xe6ec;</i><span class="getposition">定位失败</span></div>
+      <div class="list-item"><i class="iconfont position">&#xe667;</i><span class="addsName">{{activityList}}</span></div>
+    </div>
+
+    <div class="activity-con">
+        <div class="con-item item-right">
+          <img :src="imgSrc[0]" alt="" class="activity-img">
+        </div>
+        <div class="con-item">
+          <img :src="imgSrc[1]" alt="" class="activity-img">
+        </div>
+    </div>
 
     <div class="recommend">
       <div  class="recTittle">
@@ -55,9 +69,10 @@
         <a href="javascript:;">查看所有产品</a>
       </div>
     </div>
+
     <div class="weekends">
-        <h2 class="weekTittle">周末去哪儿</h2>
-      <div v-for="(item, index) in getWeekends" class="weekendsCon">
+      <h2 class="weekTittle">周末去哪儿</h2>
+      <div v-for="(item, index) in getWeekends" :key="index" class="weekendsCon">
         <a href="javascript:;">
           <div class="pictureBox">
             <img :src="item.imgUrl" alt="" class="picture">
@@ -68,23 +83,9 @@
           </div>
         </a>
       </div>
+    </div>   
 
-
-    <div class="activity-list">
-      <div class="list-item item-right"><i class="iconfont position">&#xe6ec;</i><span>定位失败</span></div>
-      <div class="list-item"><i class="iconfont position">&#xe667;</i><span>{{activityList}}</span></div>
-    </div>
-
-    <div class="activity-con">
-        <div class="con-item item-right">
-          <img :src="imgSrc[0]" alt="" class="activity-img">
-        </div>
-        <div class="con-item">
-          <img :src="imgSrc[1]" alt="" class="activity-img">
-        </div>
-    </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -101,9 +102,12 @@
         recommend: [],
         weekends: [],
         swiperOption: {
-          autoplay: 4000,
-          pagination: '.swiper-pagination',
-          loop: true
+          loop: true,
+          autoplay: 1000,
+          pagination: '.swiper-pagination'
+        },
+        iconOption: {
+          pagination: '.swiper-pagination'
         },
         activityList: '',
         imgSrc: []
@@ -155,8 +159,8 @@
         if (body && body.data && body.data.swiper) {
           this.swiperInfo = body.data.swiper
           this.iconInfo = body.data.icons
-          this.recommend = body.data.city.北京.recommend
-          this.weekends = body.data.city.北京.weekends
+          this.recommend = body.data.city.BJ.recommend
+          this.weekends = body.data.city.BJ.weekends
           if (area.length > 4) {
             this.position = area.substr(0, 4)
           } else {
@@ -266,9 +270,13 @@
     height: .66rem;
   }
   .keyword {
+    width: 1.8rem;
     margin-top: .2rem;
     font-size: .28rem;
     text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   .swiper-icon {
     height: 3.8rem;
@@ -294,7 +302,19 @@
     transform: scaleY(.5);
     top: 0;
   }
+  .getposition,.addsName {
+    width: 1.4rem;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .activity-list i {
+    display: inline-block;
+  }
   .list-item {
+    display: flex;
+    justify-content: center;
     width: 50%;
     height: 100%;
     line-height: .98rem;
@@ -337,20 +357,20 @@
     width: 50%;
     height: 100%;
   }
-  .activity-img{
-    width: 90%;
+  .activity-img {
+    height: 100%
   }
-  .recommend{
+  /*.recommend {
     overflow: hidden;
     width: 100%;
     height: 0;
     padding-bottom: 147.73%;
-  }
-  .recTittle{
+  }*/
+  .recTittle {
     box-sizing:border-box;
     position: relative;
   }
-  .recTittle:after{
+  .recTittle:after {
     content: "";
     position: absolute;
     top: 0;
@@ -359,26 +379,30 @@
     width: 100%;
     transform: scaleY(.5);
   }
-  .recTittle h2{
+  .recTittle h2 {
     height: .8rem;
+    width: 6rem;
     padding-left: .26rem;
     line-height: .8rem;
     color: #212121;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
-  .recCon{
+  .recCon {
     display: flex;
     flex-direction: column;
     background: #fff;
-    overflow: hidden;
+    /*overflow: hidden;
     width: 100%;
     height: 0;
-    padding-bottom: 125.33%;
+    padding-bottom: 129.33%;*/
   }
-  .recShowLi{
+  .recShowLi {
     position: relative;
     width: 100%;
   }
-  .recShowLi:after{
+  .recShowLi:after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -387,19 +411,20 @@
     width: 100%;
     transform: scaleY(.5);
   }
-  .recShowLi a{
+  .recShowLi a {
     display: flex;
     padding: .24rem;
     box-sizing:border-box;
   }
-  .recImgBox{
+  .recImgBox {
     margin-right: .2rem;
   }
-  .recImg{
+  .recImg {
     height: 1.4rem;
     width: 1.4rem;
   }
-  .recItemName{
+  .recItemName {
+    width: 4rem;
     overflow: hidden;
     color: #212121;
     font-size: .3rem;
@@ -407,64 +432,69 @@
     white-space: nowrap;
     text-overflow: ellipsis;
   }
-  .recDescription{
+  .recDescription {
     overflow: hidden;
     margin-bottom: .1rem;
     height: .4rem;
+    width: 5rem;
     line-height: .4rem;
     color: #9e9e9e;
     white-space: nowrap;
     text-overflow: ellipsis;
   }
-  .recItemPrice{
+  .recItemPrice {
     font-size: .2rem;
     color: #ff8300;
   }
-  .price{
+  .price {
     font-size: .36rem;
     margin: 0 .06rem;
   }
-  .recItemPrice i{
+  .recItemPrice i {
     color: #9e9e9e;
     font-size: .24rem;
   }
-  .moreRec{
+  .moreRec {
     width: 100%;
     height: .88rem;
     line-height: .88rem;
     text-align: center;
     background: #fff;
   }
-  .weekendsCon{
+  .weekendsCon {
     background: #fff;
   }
-  .weekTittle{
+  .weekTittle {
     height: .8rem;
+    width: 6rem;
     line-height: .8rem;
     color: #212121;
     padding-left: .26rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
-  .pictureBox{
+  .pictureBox {
     width: 100%;
     height: 0;
     overflow: hidden;
     padding-bottom: 38%;
   }
-  .picture{
+  .picture {
     width: 100%;
   }
-  .weekendsInco{
+  .weekendsInco {
     padding: .14rem .2rem .2rem .2rem;
   }
-  .placename{
-    overflow: hidden;
+  .placename {
     color: #212121;
     font-size: .28rem;
     line-height: .48rem;
+    overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
   }
-  .description{
+  .description {
     overflow: hidden;
     color: #616161;
     font-size: .24rem;
