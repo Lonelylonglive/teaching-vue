@@ -6,7 +6,7 @@
     <div class="recCon">
       <ul class="recShow">
         <li class="recShowLi" v-for="(item,index) in getIndexRec" :key="item.id">
-          <a href="javascript:;">
+          <router-link :to="'/detail/'+ item.name">
             <div class="recImgBox">
               <img class="recImg" :src="item.imgUrl">
             </div>
@@ -17,7 +17,7 @@
                 &yen;<em class="price">{{item.price}}</em><i>起</i>
               </div>
             </div>
-          </a>
+          </router-link>
         </li>
       </ul>
     </div>

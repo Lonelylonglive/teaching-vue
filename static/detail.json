@@ -1,10 +1,97 @@
 {
 	"ret": true,
 	"data": {
-		"place":{
-			"name": "故宫(AAAAA景区)",
-			"address": "北京市东城区景山前街4号",
-			"imgUrl": ["http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_600x330_f922b488.jpg"]
-		}
+		"place":[
+  		{
+  			"id":"00001",
+  			"key":"故宫",
+  			"name": "故宫(AAAAA景区)",
+  			"address": "北京市东城区景山前街4号",
+  			"imgUrl": ["http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_600x330_f922b488.jpg",
+                  "http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_800x800_04f227ef.jpg",
+                  "http://img1.qunarzz.com/sight/p55/201211/04/fbcab3e5d6479ce893835fbb.jpg_800x800_3f52b8da.jpg",
+                  "http://img1.qunarzz.com/wugc/p180/201306/16/7f08e81624346b1693835fbb.jpg_800x800_eb941a31.jpg",
+                  "http://img1.qunarzz.com/sight/p0/1410/e3/73da8d3e19cdc41c1932d4fcd22ec792.water.jpg_800x800_ef9611de.jpg",
+                  "http://img1.qunarzz.com/sight/p0/1410/34/f540a04367d06820af4dfeaf0ad40257.water.jpg_800x800_d7cec880.jpg"],
+        "announce":"除法定节假日，故宫博物院实行周一闭馆。",
+        "recommend":[{
+          "id":"1",
+          "route":"天安门故宫珍宝馆+八达岭+颐和园+恭王府联票无线耳麦人工讲解",
+          "price":"27"
+        },{
+          "id":"2",
+          "route":"【5大景点】广场+故宫+八达岭长城+鸟巢水立方，北京一日游",
+          "price":"148"
+        }
+        ],
+        "ticketType":[
+          {
+            "id":"1",
+            "show":true,
+            "groups":"故宫成人票",
+            "times":[{
+              "timesname":"上午场",
+              "lowerprice":40,
+              "attention":"凭身份证入园"
+              },{
+              "timesname":"下午场",
+              "lowerprice":40,
+              "attention":"凭身份证入园"
+              }]
+          },
+          {
+            "id":"2",
+            "show":true,
+            "groups":"故宫学生票",
+            "times":[{
+              "timesname":"上午场",
+              "lowerprice":20,
+              "attention":"凭身份证入园"
+              },{
+              "timesname":"下午场",
+              "lowerprice":20,
+              "attention":"凭身份证入园"
+              }]
+          },
+          {
+            "id":"3",
+            "show":true,
+            "groups":"故宫老人票",
+            "times":[{
+              "timesname":"上午场",
+              "lowerprice":20,
+              "attention":"凭身份证入园"
+              },{
+              "timesname":"下午场",
+              "lowerprice":20,
+              "attention":"凭身份证入园"
+              }]
+          },
+          {
+            "id":"4",
+            "show":true,
+            "groups":"热销组合产品",
+            "times":[{
+              "timesname":"上午场成人票+自助导览器",
+              "lowerprice":60,
+              "attention":"凭身份证入园"
+              },{
+              "timesname":"【大内御讲 9:00场】蓝琪儿格格带您穿越故宫（含故宫+珍宝馆门票）",
+              "lowerprice":115,
+              "attention":"凭身份证入园"
+              }]
+          }
+        ]
+
+  		},
+      {
+        "id":"00002",
+        "key":"天安门广场",
+        "name": "天安门广场",
+        "address": "北京市东城区天安门",
+        "imgUrl": ["http://img1.qunarzz.com/sight/p0/1501/f4/f467729126949c3a.water.jpg_600x330_371120bc.jpg"]
+      }
+		]
+
 	}
 }
