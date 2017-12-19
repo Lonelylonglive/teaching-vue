@@ -3,7 +3,9 @@
     <header class="header">
       <div class="back iconfont">&#xe720;</div>
       <div class="search"><a href="#" class="prompt"><i class="icon-search iconfont">&#xe741;</i><span class="search-con">输入城市/景点/游玩主题</span></a></div>
-      <div class="city"><span class="area">{{position}}</span></div>
+      <div class="city">
+        <router-link to="/city" class="area">{{position}}</router-link>
+      </div>
     </header>
 
     <swiper :options="swiperOption" class="swiper-img-con">
@@ -230,6 +232,7 @@
   .area {
     display: inline-block;
     margin-right: .6rem;
+    color: #fff;
   }
   .city::after {
     content:"";
