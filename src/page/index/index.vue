@@ -8,29 +8,9 @@
       </div>
     </header>
 
-    <swiper :options="swiperOption" class="swiper-img-con">
-      <swiper-slide v-for="item in swiperInfo" :key="item.id">
-        <div class="swiper-img-con">
-          <img  class="swiper-img" :src="item.imgUrl"/>
-        </div>
-      </swiper-slide>
-      <div class="swiper-pagination"  slot="pagination"></div>
-    </swiper>
-
-    <swiper :options="swiperOption" class="swiper-icon">
-      <swiper-slide v-for="(pageInfo, index) in pages" :key="index">
-        <div class="icon-wrapper">
-          <div v-for="item in pageInfo" :key="item.id" class="icon-item">
-            <div class="icon-img-con">
-              <img  class="icon-img" :src="item.imgUrl"/>
-              <div class="keyword">{{item.title}}</div>
-            </div>
-          </div>
-        </div>
-      </swiper-slide>
-      <div class="swiper-pagination"  slot="pagination"></div>
-    </swiper>
-
+    <index-swiper :swiperInfo="swiperInfo"></index-swiper>
+    <icon-swiper :pages="pages"></icon-swiper>
+   
     <div class="activity-list">
       <div class="list-item item-right"><i class="iconfont position">&#xe6ec;</i><span class="item-con">定位失败</span></div>
       <div class="list-item"><i class="iconfont position">&#xe667;</i><span class="item-con">{{activityList}}</span></div>
@@ -84,18 +64,22 @@
           </div>
         </a>
       </div>
-
-
-    
   </div>
 </div>
 </template>
 
 <script>
+  import IndexSwiper from './swiper'
+  import IconSwiper from './iconSwiper'
+
   export default {
 
     name: 'Index',
 
+    components: {
+      IndexSwiper,
+      IconSwiper
+    },
     data () {
       return {
         recommendNum: 5,
@@ -104,11 +88,6 @@
         iconInfo: [],
         recommend: [],
         weekends: [],
-        swiperOption: {
-          autoplay: 4000,
-          pagination: '.swiper-pagination',
-          loop: true
-        },
         activityList: '',
         ads: []
       }
@@ -244,44 +223,6 @@
     position: absolute;
     right: 0.3rem;
     top: 0.36rem;
-  }
-  .swiper-img-con {
-    overflow: hidden;
-    width: 100%;
-    height: 0;
-    padding-bottom: 31.25%;
-  }
-  .swiper-img {
-    width: 100%;
-  }
-  .icon-item {
-    box-sizing: border-box;
-    float: left;
-    width: 25%;
-    text-align: center;
-  }
-  .icon-img-con {
-    width: 100%;
-    height: 1.3rem;
-    padding-top: .3rem;
-    text-align: center;
-  }
-  .icon-img {
-    width: .66rem;
-    height: .66rem;
-  }
-  .keyword {
-    margin-top: .2rem;
-    font-size: .28rem;
-    text-align: center;
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .swiper-icon {
-    height: 3.8rem;
-    background: #fff;
   }
   .activity-list {
     box-sizing: border-box;

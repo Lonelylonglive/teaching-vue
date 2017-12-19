@@ -1,144 +1,169 @@
 {
 	"ret": true,
 	"data": {
-		"hotCity": [{
-			"id": "00001",
-			"city": "北京"
-		}, {
-			"id": "00002",
-			"city": "西安"
-		}, {
-			"id": "00003",
-			"city": "三亚"
-		}, {
-			"id": "00004",
-			"city": "丽江"
-		}, {
-			"id": "00005",
-			"city": "桂林"
-		}, {
-			"id": "00006",
-			"city": "成都"
-		}, {
-			"id": "00007",
-			"city": "上海"
-		}, {
-			"id": "00008",
-			"city": "西双版纳"
-		}, {
-			"id": "00009",
-			"city": "厦门"
-		}, {
-			"id": "00010",
-			"city": "长沙"
-		}, {
-			"id": "00011",
-			"city": "苏州"
-		}, {
-			"id": "00012",
-			"city": "大理"
-		}, {
-			"id": "00013",
-			"city": "广州"
-		}],
-		"allCity": [{
-			"id": "00001",
-			"indexes": "A",
-			"cityList": [{
-				"chinese": "阿坝藏族羌族自治州",
-				"spell": "abazangzuqiangzuzizhizhou"
+		"inland": {
+			"hotCity": [{
+				"id": "00001",
+				"city": "北京"
 			}, {
-				"chinese": "阿克苏地区",
-				"spell": "akesudiqu"
+				"id": "00002",
+				"city": "西安"
 			}, {
-				"chinese": "阿拉尔",
-				"spell": "alaer"
+				"id": "00003",
+				"city": "三亚"
+			}, {
+				"id": "00004",
+				"city": "丽江"
+			}, {
+				"id": "00005",
+				"city": "桂林"
+			}, {
+				"id": "00006",
+				"city": "成都"
+			}, {
+				"id": "00007",
+				"city": "上海"
+			}, {
+				"id": "00008",
+				"city": "西双版纳"
+			}, {
+				"id": "00009",
+				"city": "厦门"
+			}, {
+				"id": "00010",
+				"city": "长沙"
+			}, {
+				"id": "00011",
+				"city": "苏州"
+			}, {
+				"id": "00012",
+				"city": "大理"
+			}, {
+				"id": "00013",
+				"city": "广州"
+			}],
+			"allCity": [{
+				"id": "00001",
+				"indexes": "A",
+				"cityList": [{
+					"chinese": "阿坝藏族羌族自治州",
+					"spell": "abazangzuqiangzuzizhizhou"
+				}, {
+					"chinese": "阿克苏地区",
+					"spell": "akesudiqu"
+				}, {
+					"chinese": "阿拉尔",
+					"spell": "alaer"
+				}]
+			}, {
+				"id": "00002",
+				"indexes": "B",
+				"cityList": [{
+					"chinese": "北京",
+					"spell": "beijing"
+				}, {
+					"chinese": "保定",
+					"spell": "baoding"
+				}, {
+					"chinese": "北海",
+					"spell": "beihai"
+				}]
+			}, {
+				"id": "00003",
+				"indexes": "C",
+				"cityList": [{
+					"chinese": "重庆",
+					"spell": "chongqing"
+				}, {
+					"chinese": "成都",
+					"spell": "chengdu"
+				}, {
+					"chinese": "长沙",
+					"spell": "changsha"
+				}]
+			}, {
+				"id": "00004",
+				"indexes": "D",
+				"cityList": [{
+					"chinese": "大连",
+					"spell": "dalian"
+				}, {
+					"chinese": "大理",
+					"spell": "dali"
+				}, {
+					"chinese": "德州",
+					"spell": "dezhou"
+				}]
+			}, {
+				"id": "00005",
+				"indexes": "E",
+				"cityList": [{
+					"chinese": "鄂州",
+					"spell": "ezhou"
+				}]
+			}, {
+				"id": "00006",
+				"indexes": "F",
+				"cityList": [{
+					"chinese": "佛山",
+					"spell": "foshan"
+				}, {
+					"chinese": "福建",
+					"spell": "fujian"
+				}, {
+					"chinese": "抚顺",
+					"spell": "fushun"
+				}]
+			}, {
+				"id": "00007",
+				"indexes": "G",
+				"cityList": [{
+					"chinese": "广州",
+					"spell": "guangzhou"
+				}, {
+					"chinese": "贵阳",
+					"spell": "guiyang"
+				}, {
+					"chinese": "桂林",
+					"spell": "guilin"
+				}]
+			}, {
+				"id": "00008",
+				"indexes": "H",
+				"cityList": [{
+					"chinese": "杭州",
+					"spell": "hangzhou"
+				}, {
+					"chinese": "海南",
+					"spell": "hainan"
+				}, {
+					"chinese": "葫芦岛",
+					"spell": "huludao"
+				}]
 			}]
-		}, {
-			"id": "00002",
-			"indexes": "B",
-			"cityList": [{
-				"chinese": "北京",
-				"spell": "beijing"
+		},
+		"foreign": {
+			"hotCity": [{
+				"id": "00001",
+				"city": "纽约"
 			}, {
-				"chinese": "保定",
-				"spell": "baoding"
-			}, {
-				"chinese": "北海",
-				"spell": "beihai"
+				"id": "00002",
+				"city": "洛杉矶"
+			}],
+			"allCity": [{
+				"id": "00001",
+				"indexes": "A",
+				"cityList": [{
+					"chinese": "美国",
+					"spell": "America"
+				}, {
+					"chinese": "阿根廷",
+					"spell": "Argentina"
+				}, {
+					"chinese": "奥地利",
+					"spell": "Austria"
+				}]
 			}]
-		}, {
-			"id": "00003",
-			"indexes": "C",
-			"cityList": [{
-				"chinese": "重庆",
-				"spell": "chongqing"
-			}, {
-				"chinese": "成都",
-				"spell": "chengdu"
-			}, {
-				"chinese": "长沙",
-				"spell": "changsha"
-			}]
-		}, {
-			"id": "00004",
-			"indexes": "D",
-			"cityList": [{
-				"chinese": "大连",
-				"spell": "dalian"
-			}, {
-				"chinese": "大理",
-				"spell": "dali"
-			}, {
-				"chinese": "德州",
-				"spell": "dezhou"
-			}]
-		}, {
-			"id": "00005",
-			"indexes": "E",
-			"cityList": [{
-				"chinese": "鄂州",
-				"spell": "ezhou"
-			}]
-		}, {
-			"id": "00006",
-			"indexes": "F",
-			"cityList": [{
-				"chinese": "佛山",
-				"spell": "foshan"
-			}, {
-				"chinese": "福建",
-				"spell": "fujian"
-			}, {
-				"chinese": "抚顺",
-				"spell": "fushun"
-			}]
-		}, {
-			"id": "00007",
-			"indexes": "G",
-			"cityList": [{
-				"chinese": "广州",
-				"spell": "guangzhou"
-			}, {
-				"chinese": "贵阳",
-				"spell": "guiyang"
-			}, {
-				"chinese": "桂林",
-				"spell": "guilin"
-			}]
-		}, {
-			"id": "00008",
-			"indexes": "H",
-			"cityList": [{
-				"chinese": "杭州",
-				"spell": "hangzhou"
-			}, {
-				"chinese": "海南",
-				"spell": "hainan"
-			}, {
-				"chinese": "葫芦岛",
-				"spell": "huludao"
-			}]
-		}]
+		}
 	}
 }
