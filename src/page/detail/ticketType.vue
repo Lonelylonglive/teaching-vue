@@ -26,11 +26,14 @@
   props: ['mainview'],
   data () {
     return {
-      show: true
+      show: true,
+      count: 0
     }
   },
   methods: {
-    extend () {}
+    extend (e) {
+      e.target.style.background = 'red'
+    }
   }
 	}
 </script>
@@ -47,7 +50,10 @@
   }
   .ticket-txt {
     display: inline-block;
+    width: 100%;
     overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     line-height: .88rem;
     color: #333;
     font-size: .32rem;
@@ -74,6 +80,11 @@
     color: #333;
     font-size: .3rem;
     line-height: .48rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
   }
   .attention {
     font-size: .24rem;
@@ -85,6 +96,7 @@
   .ticket-price {
     flex: 1;
     display: flex;
+    justify-content: center;
     align-items: center;
     line-height: .4rem;
     text-align: center;

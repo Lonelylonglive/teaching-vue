@@ -43,6 +43,9 @@
     color: #fff;
     font-size: .32rem;
     text-shadow: 0 1px 2px rgba(0,0,0,0.70);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   .imgnum-icon{
     display: inline-block;

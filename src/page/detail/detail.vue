@@ -21,12 +21,13 @@
       </div>
 
       <div class="main-list">
-
         <recommend-list :mainview="mainview"></recommend-list>
         <ticket-type :mainview="mainview"></ticket-type>
       </div>
 
+      <comment-container :mainview="mainview"></comment-container>
 
+      <recommend-info :mainview="mainview"></recommend-info>
      
 
     </main>
@@ -39,13 +40,17 @@
   import mainComment from './mainComment'
   import recommendList from './recommendList'
   import ticketType from './ticketType'
+  import commentContainer from './commentContainer'
+  import recommendInfo from './recommendInfo'
   export default {
     components: {
       mainImg,
       mainBaseinfo,
       mainComment,
       recommendList,
-      ticketType
+      ticketType,
+      commentContainer,
+      recommendInfo
     },
     data () {
       return {
