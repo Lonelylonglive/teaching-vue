@@ -111,9 +111,7 @@
           loop: true
         },
         swiperOption1: {
-          autoplay: 10000,
-          pagination: '.swiper-pagination',
-          loop: true
+          pagination: '.swiper-pagination'
         }
       }
     },
