@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Index from '@/page/index/index'
 import City from '@/page/city/city'
 import Detail from '@/page/detail/detail'
+import OneTour from '@/page/OneTour/OneTour'
 
 Vue.use(Router)
 
@@ -19,5 +20,9 @@ export default new Router({
     path: '/detail/:id',
     name: 'detail',
     component: Detail
+  }, {
+    path: '/OneTour',
+    name: 'OneTour',
+    component: OneTour
   }]
 })

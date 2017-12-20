@@ -16,7 +16,7 @@
 	    return {
 	      swiperOption: {
 	        loop: true,
-	        autoplay: 1000,
+	        autoplay: 3000,
 	        pagination: '.swiper-pagination'
 	      }
 	    }

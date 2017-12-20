@@ -36,6 +36,33 @@
     
 
 
+    <div class="where">
+        <div class="where-prompt">
+          <span class="promot-black">票面价</span>是指通过景区指定窗口售卖的纸质门票上标注的价格
+        </div>
+    </div>
+
+    <div class="more">
+      <ul class="more-nav">
+        <li>机票</li>
+        <li>酒店</li>
+        <li>公寓</li>
+      </ul>
+      <ul class="more-about">
+        <li class="more-con">登陆</li>
+        <li class="more-con">我的订单</li>
+        <li class="more-con">最近浏览</li>
+        <li class="more-con">关于我们</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <p class="footer-type">
+        <a href="#" class="footer-phone">触屏版</a>
+        <a href="#" class="footer-computer">电脑版</a>
+      </p>
+      <p class="footer-intro">Qunar 京ICP备05021087 <a href="#" class="footer-idea">意见反馈</a></p>
+    </div>
   </div>
 </div>
 </template>
@@ -62,7 +89,15 @@
         recommend: [],
         weekends: [],
         activityList: '',
-        ads: []
+        ads: [],
+        swiperOption: {
+          autoplay: 10000,
+          pagination: '.swiper-pagination',
+          loop: true
+        },
+        swiperOption1: {
+          pagination: '.swiper-pagination'
+        }
       }
     },
 
@@ -277,5 +312,140 @@
   }
   .activity-img {
     height: 100%
+  }
+  .title{
+    white-space: nowrap;
+  }
+  .positionFail{
+    box-sizing: border-box;
+    width: 50%;
+    border-right: 1px solid #e1e1e1;
+  }
+  .discount{
+    box-sizing: border-box;
+    width: 50%;
+  }
+  .case{
+    display: flex;
+    flex-direction: column;
+    height: 2.4rem;
+    background: #f5f5f5;
+    box-sizing: border-box;
+    padding-top: 0.2rem;
+  }
+  .caseCon{
+    height: 1.4rem;
+    width: 100%;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    background: #fff;
+  }
+  .case-img{
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+    height: 100%;
+    border-right: 1px solid #dbdbdb;
+  }
+  .case-img img{
+    width: 100%;
+    height: 100%;
+  }
+  .recommendCon {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item-name {
+    padding-top: 0.04rem;
+    font-size: 0.26rem;
+    color: #131313;
+  }
+  .item-intro {
+    padding-top: 0.2rem;
+    color: #9b9b9b;
+    font-size: .24rem;
+  }
+  .price {
+    padding-top: 0.24rem;
+    color: #fa783c;
+  }
+  .symbol {
+    font-size: 0.16rem;
+    color: #ef9c56;
+  }
+  .sta {
+    font-size: 0.2rem;
+    color: #a4a4a4;
+  }
+  .priceSize {
+    font-size: 0.4rem;
+  }
+  .recommendCon-more {
+    height: 0.86rem;
+    text-align: center;
+    line-height: 0.86rem;
+    color: #3dc4c0;
+    font-size: 0.26rem;
+  }
+  .where {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  .where-prompt {
+    box-sizing: border-box;
+    padding: 0.2rem;
+    font-size: 0.21rem;
+    color: #303030;
+  }
+  .promot-black {
+    font-size: 0.22rem;
+    font-weight: 600;
+    color: #454545;
+  }
+  .more {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0.2rem 0;
+    border-bottom: 1px solid #c4c4c4;
+  }
+  .more-nav {
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 0.96rem;
+  }
+  .more-about {
+    display: flex;
+    box-sizing: border-box;
+    padding-left: 0.4rem;
+    padding-top: 0.32rem;
+  }
+  .more-con {
+    padding-right: 0.42rem;
+    color: #1ba2c0;
+    font-size: 0.25rem;
+  }
+  .footer {
+    display: flex;
+    flex-direction: column;
+    padding: 0.2rem 0;
+  }
+  .footer-type {
+    text-align: center;
+  }
+  .footer-phone {
+    color: #0a0a0a;
+    padding-right: 0.64rem;
+  }
+  .footer-intro {
+    padding-top: 0.25rem;
+    text-align: center;
+    color: #939393;
+  }
+  .footer-idea {
+    color: #939393;
   }
 </style>
