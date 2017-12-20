@@ -75,14 +75,10 @@
       "id": "00016",
       "title": "全部",
       "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/be/a70e61e1f57ee302.png"
-    },{
-      "id": "00017",
-      "title": "景点门票",
-      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png"
     }
     ],
     "city":{
-      "北京":{
+      "BJ":{
         "recommend":[{
         "id":"00001",
         "name":"故宫",
