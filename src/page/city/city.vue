@@ -4,19 +4,24 @@
       <i class="iconfont back">&#xe720;</i>
       <h2 class="classify">
         <div class="classify-box">
-          <span class="inland" @click="handleInlandBtn">国内</span><span class="foreign" @click="handleForeignBtn">海外</span>
+          <span class="inload" @click="handleInlandBtn" :class='[{inloadColor:!inlandFlag}]'>国内</span><span class="foreign" @click="handleForeignBtn" :class='[{foreignColor:foreignFlag}]'>海外</span>
         </div>
       </h2>
     </header>
     
     <div class="search">
-      <input class="search-con" type="text" :placeholder="hint" ref="search" @focus="handleInputFocus" @blur="handleInputBlur">
+      <input class="search-con" type="text" :placeholder="hint" ref="search" @focus="handleInputFocus" @blur="handleInputBlur" v-model="content">
     </div>
 
     <inland :hotCity="inlandHotCity" :allCity="inlandAllCity" v-if="inlandFlag"></inland>
 
     <Foreign :hotCity="foreignHotCity" :allCity="foreignAllCity" v-if="foreignFlag"></Foreign>
 
+    <div class="search-container" v-if="searchFlag">
+      <ul>
+        <li class="search-list" v-for="(item,index) in getSearchData" :key="index">{{item.chinese}}</li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -39,12 +44,23 @@
         foreignAllCity: [],
         hint: '输入城市名或拼音',
         inlandFlag: true,
-        foreignFlag: false
+        foreignFlag: false,
+        searchFlag: false,
+        content: ''
       }
     },
     computed: {
-      getData () {
-        console.log()
+      getSearchData () {
+        const SearchData = []
+        this.inlandAllCity.forEach((value, index) => {
+          value.cityList.forEach((value, index) => {
+            let reg = new RegExp(this.content, 'g')
+            if (reg.test(value.spell)) {
+              SearchData.push(value)
+            }
+          })
+        })
+        return SearchData
       }
     },
     methods: {
@@ -75,6 +91,15 @@
       },
       handleInputBlur () {
         this.$refs.search.style.textAlign = 'center'
+      }
+    },
+    watch: {
+      content () {
+        if (this.content) {
+          this.searchFlag = true
+        } else {
+          this.searchFlag = false
+        }
       }
     }
   }
@@ -112,9 +137,12 @@
     background: #fff;
     border-radius: .1rem;
   }
-  .inland {
+  .inload {
     width: 50%;
     color: #00afc7;
+    background: #fff;
+    border: 1px solid #fff;
+    border-radius: .1rem 0 0 .1rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -128,6 +156,14 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  .foreignColor {
+    background: #fff;
+    color: #00afc7;
+  } 
+  .inloadColor {
+    background: #00afc7;
+    color: #fff;
+  } 
   .search {
     display: flex;
     height: .72rem;
@@ -148,5 +184,17 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  
+  .search-container {
+    position: absolute;
+    top: 1.6rem;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+  }
+  .search-list {
+    height: .6rem;
+    padding-left: .2rem;
+    line-height: .6rem;
+    border-bottom: 1px solid #ccc;
+  }
 </style>

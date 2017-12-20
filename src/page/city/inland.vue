@@ -15,16 +15,16 @@
     
     <div class="indexes-list">
       <div v-for="item in allCity" :key="item.id">
-        <div class="indexes-title" >{{item.indexes}}</div>
+        <div class="indexes-title" :ref="item.indexes">{{item.indexes}}</div>
         <ul class="indexes-con">
-          <li class="indexes-con-list" v-for="(list,index) in item.cityList"  :key="index">{{list.chinese}}</li>
+          <li class="indexes-con-list" v-for="(list,index) in item.cityList" :key="index">{{list.chinese}}</li>
         </ul>
       </div>
     </div>
     
     <div class="indexes">
       <ul>
-        <li class="indexes-item" v-for="(item,index) in allCity" :key="item.id">{{item.indexes}}</li>
+       <li class="indexes-item" v-for="(item,index) in allCity" :key="item.id" @click="handleIndexesClick(item.indexes)" >{{item.indexes}}</li> 
       </ul>
     </div>
   </div>
@@ -43,6 +43,11 @@
     },
     data () {
       return {
+      }
+    },
+    methods: {
+      handleIndexesClick (index) {
+        document.documentElement.scrollTop = this.$refs[index][0].offsetTop - 44
       }
     }
   }
