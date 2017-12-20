@@ -351,11 +351,6 @@
     width: 100%;
     height: 100%;
   }
-  .recommend {
-    font-size: 0.24rem;
-    line-height: 0.8rem;
-    padding-left: 0.28rem;
-  }
   .recommendCon {
     display: flex;
     flex-direction: column;
