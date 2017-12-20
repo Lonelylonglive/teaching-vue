@@ -7,8 +7,8 @@
         </div>
         
         <div class="hot-city"><h3 class="title">热门城市</h3></div>
-        <div class="hot-city-list" >
-          <div class="city-list" v-for="item in hotCity" :key="item.id">{{item.city}}</div>
+        <div class="hot-city-list">
+          <div class="city-list" v-for="item in hotCity" :key="item.id" >{{item.city}}</div>
         </div>
         
     </div>
@@ -38,10 +38,6 @@
       },
       allCity: {
         type: Array
-      }
-    },
-    data () {
-      return {
       }
     }
   }

@@ -1,7 +1,9 @@
 <template>
   <div>
     <header class="header" >
-      <i class="iconfont back">&#xe720;</i>
+      <div>
+        <router-link to="/" class="area iconfont back">&#xe720;</router-link>
+      </div>
       <h2 class="classify">
         <div class="classify-box">
           <span class="inload" @click="handleInlandBtn" :class='[{inloadColor:!inlandFlag}]'>国内</span><span class="foreign" @click="handleForeignBtn" :class='[{foreignColor:foreignFlag}]'>海外</span>
@@ -55,7 +57,7 @@
         this.inlandAllCity.forEach((value, index) => {
           value.cityList.forEach((value, index) => {
             let reg = new RegExp(this.content, 'g')
-            if (reg.test(value.spell)) {
+            if (reg.test(value.spell) || reg.test(value.chinese)) {
               SearchData.push(value)
             }
           })
@@ -105,7 +107,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .header {
     position: fixed;
     top: 0;
@@ -120,6 +122,7 @@
     padding: 0 .1rem;
     line-height: .88rem;
     font-size: .5rem;
+    color: #fff;
   }
   .classify {
     display: flex;

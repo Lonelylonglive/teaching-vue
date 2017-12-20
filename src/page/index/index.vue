@@ -4,7 +4,7 @@
       <div class="back iconfont">&#xe720;</div>
       <div class="search"><a href="#" class="prompt"><i class="icon-search iconfont">&#xe741;</i><span class="search-con">输入城市/景点/游玩主题</span></a></div>
       <div class="city">
-        <router-link to="/city" class="area">{{position}}</router-link>
+        <router-link to="/city" class="area">{{city}}</router-link>
       </div>
     </header>
 
@@ -71,7 +71,7 @@
 <script>
   import IndexSwiper from './swiper'
   import IconSwiper from './iconSwiper'
-
+  import { mapState } from 'vuex'
   export default {
 
     name: 'Index',
@@ -83,7 +83,6 @@
     data () {
       return {
         recommendNum: 5,
-        position: '',
         swiperInfo: [],
         iconInfo: [],
         recommend: [],
@@ -94,6 +93,7 @@
     },
 
     computed: {
+      ...mapState(['city']),
       pages () {
         const pages = []
         this.iconInfo.forEach((value, index) => {
@@ -134,17 +134,11 @@
 
       handleGetDataSucc (res) {
         const body = res.body
-        const area = body.data.position
         if (body && body.data && body.data.swiper) {
           this.swiperInfo = body.data.swiper
           this.iconInfo = body.data.icons
           this.recommend = body.data.city.北京.recommend
           this.weekends = body.data.city.北京.weekends
-          if (area.length > 4) {
-            this.position = area.substr(0, 4)
-          } else {
-            this.position = area
-          }
           this.activityList = body.data.activityList
           if (body.data.activityImg) {
             const imgArr = body.data.activityImg

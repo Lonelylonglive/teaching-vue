@@ -3,12 +3,12 @@
     <div class="content">
         <div class="place"><h3 class="title">您的位置</h3></div>
         <div class="my-place">
-          <div class="position">北京</div>
+          <div class="position">{{city}}</div>
         </div>
         
         <div class="hot-city"><h3 class="title">热门城市</h3></div>
         <div class="hot-city-list" >
-          <div class="city-list" v-for="item in hotCity" :key="item.id">{{item.city}}</div>
+          <div class="city-list" v-for="item in hotCity" :key="item.id" @click="ChangeCity(item.city)">{{item.city}}</div>
         </div>
         
     </div>
@@ -17,14 +17,14 @@
       <div v-for="item in allCity" :key="item.id">
         <div class="indexes-title" :ref="item.indexes">{{item.indexes}}</div>
         <ul class="indexes-con">
-          <li class="indexes-con-list" v-for="(list,index) in item.cityList" :key="index">{{list.chinese}}</li>
+          <li class="indexes-con-list" v-for="(list,index) in item.cityList" :key="index" @click="ChangeCity(list.chinese)">{{list.chinese}}</li>
         </ul>
       </div>
     </div>
     
-    <div class="indexes">
+    <div class="indexes" ref="box">
       <ul>
-       <li class="indexes-item" v-for="(item,index) in allCity" :key="item.id" @click="handleIndexesClick(item.indexes)" >{{item.indexes}}</li> 
+       <li class="indexes-item" v-for="(item,index) in allCity" :key="item.id" @touchstart="handleIndexesClick(item.indexes)" @touchmove="handleTouchMove">{{item.indexes}}</li> 
       </ul>
     </div>
   </div>
@@ -32,6 +32,8 @@
 </template>
 
 <script>
+  import {mapState, mapMutations} from 'vuex'
+
   export default {
     props: {
       hotCity: {
@@ -41,13 +43,19 @@
         type: Array
       }
     },
-    data () {
-      return {
-      }
+    computed: {
+      ...mapState(['city'])
     },
     methods: {
-      handleIndexesClick (index) {
-        document.documentElement.scrollTop = this.$refs[index][0].offsetTop - 44
+      ...mapMutations(['ChangeCity']),
+      handleIndexesClick (indexes) {
+        document.documentElement.scrollTop = this.$refs[indexes][0].offsetTop - 44
+      },
+      handleTouchMove (e) {
+        let distance = e.touches[0].clientY - this.$refs.box.offsetTop
+        let index = Math.ceil(distance / 30)
+        let indexes = this.allCity[index - 1].indexes
+        document.documentElement.scrollTop = this.$refs[indexes][0].offsetTop - 44
       }
     }
   }
@@ -114,11 +122,14 @@
     position: fixed;
     top: 35%;
     right: 0;
-    width: .32rem;
+    width: .5rem;
     color: #3db0b3;
+    height: .6rem;
   }
-  .indexes-item{
-    margin-top: .2rem;
+  .indexes-item {
+    width: 100%;
+    height: .6rem;
+    padding-right: .3rem;
   }
   .indexes-title {
     height: .54rem;
