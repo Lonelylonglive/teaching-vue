@@ -1,16 +1,18 @@
 <template>
   <div>
     <header class="header">
-      <div class="back iconfont">&#xe720;</div>
+      <div class="back iconfont">&#xe624;</div>
       <div class="search"><a href="#" class="prompt"><i class="icon-search iconfont">&#xe741;</i><span class="search-con">输入城市/景点/游玩主题</span></a></div>
       <div class="city"><span class="area">{{position}}</span></div>
     </header>
 
     <swiper :options="swiperOption" class="swiper-img-con">
       <swiper-slide v-for="item in swiperInfo" :key="item.id">
-        <div class="swiper-img-con">
-          <img  class="swiper-img" :src="item.imgUrl"/>
-        </div>
+        <router-link :to="'/spa/' + item.id">
+          <div class="swiper-img-con">
+            <img  class="swiper-img" :src="item.imgUrl"/>
+          </div>
+        </router-link>
       </swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
@@ -103,7 +105,8 @@
         swiperOption: {
           autoplay: 4000,
           pagination: '.swiper-pagination',
-          loop: true
+          loop: true,
+          initialSlide: 1
         },
         activityList: '',
         imgSrc: []
