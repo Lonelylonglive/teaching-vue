@@ -1,10 +1,13 @@
 <template>
   <div>
     <header class="header">
-      <div class="back iconfont">&#xe720;</div>
+      <div class="back iconfont">&#xe624;</div>
       <div class="search"><a href="#" class="prompt"><i class="icon-search iconfont">&#xe741;</i><span class="search-con">输入城市/景点/游玩主题</span></a></div>
+
       <div class="city">
         <router-link to="/city" class="area">{{city}}</router-link>
+
+      
       </div>
     </header>
 
@@ -93,7 +96,8 @@
         swiperOption: {
           autoplay: 10000,
           pagination: '.swiper-pagination',
-          loop: true
+          loop: true,
+          initialSlide: 1
         },
         swiperOption1: {
           pagination: '.swiper-pagination'
