@@ -27,9 +27,8 @@ export default new Router({
     name: 'OneTour',
     component: OneTour
   }, {
-      path: '/Spa',
-      name: 'Spa',
-      component: Spa
-    }]
-    
+    path: '/Spa',
+    name: 'Spa',
+    component: Spa
+  }]
 })

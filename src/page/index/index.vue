@@ -16,7 +16,15 @@
    
     <div class="activity-list">
       <div class="list-item item-right"><i class="iconfont position">&#xe6ec;</i><span class="item-con">定位失败</span></div>
-      <div class="list-item"><i class="iconfont position">&#xe667;</i><span class="item-con">{{activityList}}</span></div>
+
+        <div class="list-item">
+          <i class="iconfont position">&#xe667;</i>
+          <router-link to="/Spa">
+            <span class="item-con">
+              {{activityList}}
+            </span>
+          </router-link>
+      </div>
 
     </div>
 
