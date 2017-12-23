@@ -10,7 +10,7 @@
     	<h3 class="tourist-select">游玩景点<span class="selection">(可多选)</span></h3>
       <div class="tourist-Area" ref="hotContainer">
           <ul class="tourist-show">
-            <li class="tourist-Date" v-for="item in touristData" :key="item.id"><span class="tourist-Size" >{{item.name}}</span></li>
+            <li class="tourist-Date" v-for="item in touristData" :key="item.id"><span class="tourist-Size" @click="handleBtn">{{item.name}}</span></li>
           </ul>
       </div>
       <span class="triangle" @click="handleTriangle"><span class="iconfont tourist-iconfont">&#xe62e;</span></span>
@@ -77,6 +77,10 @@
         }
       },
 
+      handleBtn (e) {
+        console.log(e.target)
+      },
+
       handleTriangle () {
         if (this.flag) {
           this.$refs.hotContainer.style.display = 'none'
@@ -93,7 +97,9 @@
     },
 
     mounted () {
-      this.scroll = new BScroll(this.$refs.hotContainer)
+      this.scroll = new BScroll(this.$refs.hotContainer, {
+        click: true
+      })
     },
 
     watch: {
