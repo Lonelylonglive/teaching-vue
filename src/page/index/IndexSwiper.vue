@@ -1,6 +1,7 @@
 <template>
 	<swiper :options="swiperOption" class="swiper-img-con">
     <swiper-slide v-for="item in swiperInfo" :key="item.id">
+      
       <div class="swiper-img-con">
         <img  class="swiper-img" :src="item.imgUrl"/>
       </div>

@@ -61,10 +61,6 @@
     display: flex;
     flex-direction: column;
     background: #fff;
-    /*overflow: hidden;
-    width: 100%;
-    height: 0;
-    padding-bottom: 129.33%;*/
   }
   .recShowLi {
     position: relative;
@@ -92,6 +88,8 @@
     width: 1.4rem;
   }
   .recItemName {
+    height: .3rem;
+    line-height: .3rem;
     width: 4rem;
     overflow: hidden;
     color: #212121;
@@ -113,6 +111,7 @@
   .recItemPrice {
     font-size: .2rem;
     color: #ff8300;
+    line-height: .36rem;
   }
   .price {
     font-size: .36rem;
