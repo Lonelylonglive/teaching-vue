@@ -5,7 +5,9 @@
       <div class="back iconfont">&#xe720;</div>
       <h1 class="headerTittle">故宫</h1>
     </header>
-
+    <router-link to="/"> 
+      <span class="header-back iconfont">&#xe624;</span>
+    </router-link>
     <main class="main">
 
       <main-img :viewImg="viewImg" :mainview="mainview"></main-img>
@@ -104,6 +106,20 @@
     line-height: .86rem;
     text-align: center;
     font-size: .5rem;
+  }
+  .header-back {
+    position: absolute;
+    display: block;
+    width: .72rem;
+    height: .72rem;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: .36rem;
+    z-index: 99999;
+    left: .1rem;
+    top: .1rem;
+    line-height: .72rem;
+    text-align: center;
+    color: #fff;
   }
   .headerTittle {
     width: 100%;
