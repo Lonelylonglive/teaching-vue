@@ -1,6 +1,5 @@
 <template>
-
-  <keep-alive include='Index'>
+  <keep-alive include="Index">
     <router-view></router-view>
   </keep-alive>
 
