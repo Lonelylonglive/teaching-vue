@@ -1,0 +1,280 @@
+{
+	"ret": true,
+	"data": {
+		"location": "北京",
+		"quNaLogoUrl": "//source.qunarzz.com/site/images/wap/touch/images/v2/images1x/top-logo.png",
+		"closeDownloadClientBtn": "//source.qunarzz.com/site/images/wap/touch/images/v2/images1x/modifydelete.png",
+		"spaHeaderTitle": "温泉5折起，精挑细选温泉清单",
+		"bannerImgUrl" :"//img1.qunarzz.com/piao/fusion/1710/a5/30bea424f8862102.jpg_640x361_929a4c2a.jpg",
+		"startFiveDiscount": "温泉5折起",
+		"detailedChoiseListspaList": "精挑细选温泉清单",
+		"couponPrice": "5",
+		"couponName": "先领券再泡汤",
+		"newCustomerCoupon": "- 门票新客代金券 -",
+		"getCouponNow": "立即领取",
+		"lifeGuideInfo": [
+			{
+				"id": "0000001",
+				"content": "超值温泉"
+			},
+			{
+				"id": "0000002",
+				"content": "山水温泉"
+			},
+			{
+				"id": "0000003",
+				"content": "养生温泉"
+			},
+			{
+				"id": "0000004",
+				"content": "亲子温泉"
+			},
+			{
+				"id": "0000005",
+				"content": "省心一日游"
+			},
+			{
+				"id": "0000006",
+				"content": "温泉贴士"
+			}
+		],
+		"seniorValueSpaTitle": "●超值温泉●",
+		"seniorValueSpatText": "近千家温泉逐一甄选。价格不高，格调很高；水质、水温、环境、路途、服务...想你所想，为你所选！",
+		"seniorValueSpaShowList": [
+			{
+				"id":"00000001",
+				"seniorValueSpaShowImg": "http://img1.qunarzz.com/sight/p0/1507/d5/a9c70a3b26bd90e2e9274eae72ae6727.water.jpg_200x180_ddf33dd2.jpg",
+				"seniorValueSpaShowInfo": "【特权日】北京九华温泉文化主题公园- 晚场温泉票（17:00-23:00使用）",
+				"FirstseniorValueSpaFeatures": "露天温泉",
+				"SecondSeniorValueSpaFeatures": "温柔之乡",
+				"seniorValueSpaPrice": "78",
+				"seniorValueSpaParPrice" : "票面价¥300"
+			},
+			{
+				"id":"00000002",
+				"seniorValueSpaShowImg": "//img1.qunarzz.com/sight/p0/201303/04/50b65ba27d711f92c8d65eac.jpg_200x180_19d66131.jpg",
+				"seniorValueSpaShowInfo": "北京红栌山庄温泉门票",
+				"FirstseniorValueSpaFeatures": "儿童乐园",
+				"SecondSeniorValueSpaFeatures": "性价比高",
+				"seniorValueSpaPrice": "88",
+				"seniorValueSpaParPrice" : "票面价¥280"
+			}
+		],
+		"spaMountainTitle": "山水温泉",
+		"spaMountainTagList": [
+			{
+				"id": "00000001",
+				"spaMountainTagName": "情侣"
+			},
+			{
+				"id": "00000002",
+				"spaMountainTagName": "家庭"
+			},
+			{
+				"id": "00000003",
+				"spaMountainTagName": "上班族"
+			},
+			{
+				"id": "00000004",
+				"spaMountainTagName": "学生"
+			}
+		],
+		"spaMountainText": "远离城市的喧嚣，在私密的山水温泉中恢复活力。泡汤同时还能享受美景和清新的空气，治愈一周疲惫的你。",
+		"spaMountain": [
+			{
+				"id": "001",
+				"spaImgUrl": "//img1.qunarzz.com/sight/p0/1411/43/dea8b51719a4a69b68777baa68c146e4.water.jpg_600x237_3c8b55d2.jpg",
+				"spaName": "春晖园温泉度假村",
+				"spaPrice": "112",
+				"spaEvaluate": "j*7：服务态度超级好，设施很齐全，什么都有，团购价格很合理，这是一次超级好的温泉度假，下次还会来这里！"
+			},
+			{
+				"id": "002",
+				"spaImgUrl": "//img1.qunarzz.com/sight/p0/1507/d5/a9c70a3b26bd90e2e9274eae72ae6727.water.jpg_600x237_f2a6382e.jpg",
+				"spaName": "九华山庄温泉主题公园",
+				"spaPrice": "128",
+				"spaEvaluate": "c*3：取票方便，环境很好，室内外各有一个游泳池，室外的水深1.6米，室内水深1.8米。个人感觉室外游的比较舒服。"
+			},
+			{
+				"id": "003",
+				"spaImgUrl": "//img1.qunarzz.com/piao/fusion/1710/be/d25057d66da24d02.jpg_600x237_d65ad838.jpg",
+				"spaName": "静之湖温泉",
+				"spaPrice": "107",
+				"spaEvaluate":"j*8：温泉池室内室外都有，玫瑰、薰衣草、芦荟、啤酒、牛奶，各种功能的汤池任你选择，孩子的浅池里还有海洋球可以玩。泡完还有香薰屋、盐浴可以休息。"
+			},
+			{
+				"id": "004",
+				"spaImgUrl": "//img1.qunarzz.com/sight/p0/1510/3a/3afa277c0f0bd43790.img.jpg_600x237_5256f5da.jpg",
+				"spaName": "瑞麟湾温泉",
+				"spaPrice": "138",
+				"spaEvaluate": "w*4：价格很给力，我们定的住宿+温泉，性价比还不错，主要是私密性比较好，私汤感觉更干净卫生些。"
+			}
+		],
+		"spaRaiseHealthTitle": "养生温泉",
+		"spaRaiseHealthTagList": [
+			{
+				"id": "000000001",
+				"spaRaiseHealthTagName": "家庭"
+			}
+		],
+		"spaRaiseHealthText": "快节奏生活中，很多人都是亚健康，精选地区特有矿物温泉，水质蕴含充分微量元素，养性怡情两不误！",
+		"spaMountain": [
+			{
+				"id": "00000001",
+				"spaImgUrl": "//img1.qunarzz.com/piao/fusion/1710/c0/713852790f86e002.jpg_600x237_9af43732.jpg",
+				"spaName": "顺景温泉",
+				"spaPrice": "168",
+				"spaEvaluate": "C*2：真的很不错！温度适宜，水温很热，水很干净，景色也不错，服务很好，很适合带孩子去玩，一次很愉快的出行，全家都很开心！"
+			},
+			{
+				"id": "00000002",
+				"spaImgUrl": "//img1.qunarzz.com/sight/p0/1510/20/2048e6567ed9f6ea90.img.jpg_600x237_dabe4d2c.jpg",
+				"spaName": "北京华清温泉",
+				"spaPrice": "83",
+				"spaEvaluate": "w*2：服务很好，很一流，环境不错，推荐附近的朋友过来。"
+			},
+			{
+				"id": "00000003",
+				"spaImgUrl": "//img1.qunarzz.com/sight/p0/1503/dc/dc651cd2e01fb900.img.jpg_600x237_c6d65aea.jpg",
+				"spaName": "南宫温泉水世界",
+				"spaPrice": "107",
+				"spaEvaluate":"a*9：一家子去的，孩子特别开心，在里面一玩儿就是4个小时，回来的时候说没玩儿够。"
+			}
+		],
+		"spaParentsChildTitle": "亲子温泉",
+		"spaParentsChildTagList": [
+			{
+				"id": "0000000000001",
+				"spaParentsChildTagName": "家庭"
+			},
+			{
+				"id": "0000000000002",
+				"spaParentsChildTagName": "上班族"
+			},
+			{
+				"id": "0000000000003",
+				"spaParentsChildTagName": "情侣"
+			}
+		],
+		"spaParentsChildText": "带娃父母的最佳选择。宝宝玩的开心安全，爸妈泡温泉轻松省心，快陪宝宝度过一个完美周末吧!",
+		"spaParentsChild": [
+			{
+				"id": "0000000000001",
+				"spaImgUrl": "//img1.qunarzz.com/sight/p0/201408/07/7bfb818448c86bec2df764e5896739cd.jpg_600x237_c2766229.jpg",
+				"spaName": "美人鱼温泉宫",
+				"features": [
+					"中药浴","瘦身泉"
+				],
+				"spaPrice": "78",
+				"spaEvaluate": "s*3：温泉的药疗特色值得推荐，孩子玩的很高兴，在水池中爬行，呵呵腿都磨掉皮了还不知道呢，玩的真是开心，不是因为饿了还不回家呢，下次还会再来。"
+			},
+			{
+				"id": "0000000000002",
+				"spaImgUrl": "//img1.qunarzz.com/sight/p0/1611/96/96c7b547622c8334a3.img.jpg_600x237_9b5ee718.jpg",
+				"spaName": "西山温泉",
+				"features": [
+					"娱乐设施","儿童乐园","服务一流"
+				],
+				"spaPrice": "218",
+				"spaEvaluate": "d*7：强烈推荐藏药温泉。藏医先把脉，然后指定泡池半个小时内，汗立马被蒸出，很舒服。整体环境布局都很有西藏特色，服务人员也全是西藏本土的帅男靓女。"
+			},
+			{
+				"id": "0000000000003",
+				"spaImgUrl": "//img1.qunarzz.com/piao/fusion/1710/39/4eefca0fc28ce802.jpg_600x237_4d477d75.jpg",
+				"spaName": "温都水城",
+				"features": [
+					"鱼疗","汗蒸"
+				],
+				"spaPrice": "128",
+				"spaEvaluate": "x*2：场地很大，有个大的泳池，会定时的造浪，儿子最喜欢的，就是太空盆，大人的纠结半天没敢玩，累了可以去养生馆泡温泉，水很干净不冷，玩的很开心！"
+			}
+		],
+		"oneDayTour": "省心一日游",
+		"oneDayTourTagList": [
+			{
+				"id": "00000000001",
+				"oneDayTourTagListName": "家庭"
+			},
+			{
+				"id": "00000000002",
+				"oneDayTourTagListName": "上班族"
+			},
+			{
+				"id": "00000000003",
+				"oneDayTourTagListName": "情侣"
+			}
+		],
+		"oneDayTourText": "再也不用担心出去玩太麻烦了，【去哪儿门票】为你精选了靠谱温泉一日游！拎包就走，想去哪儿就去哪儿！",
+		"oneDayTourInfo": [
+			{
+				"id": "0000000000000001",
+				"spaImgUrl": "//img1.qunarzz.com/sight/p0/1510/3e/3e8e30a6ff5d1cb090.water.jpg_290x168_97013eb0.jpg",
+				"spaName": "古北水镇+段家温泉一日游【享长城脚下温泉、赏水镇魅力夜色】",
+				"spaPrice": "158"
+			},
+			{
+				"id": "0000000000000002",
+				"spaImgUrl": "//img1.qunarzz.com/sight/p0/1702/22/222bf121e6cb6c14a3.water.jpg_290x168_c55b03b3.jpg",
+				"spaName": "古北水镇尊享冬季宁静之美 一日游玩",
+				"spaPrice": "80"
+			}
+		],
+		"seeMoreUp": {
+			"seeMoreTitle": "查看更多温泉产品", 
+			"seeMoreSpaTips": "温泉贴士"
+		},
+		"seeMore": [
+			{
+				"id": "000000000001",
+				"enjoySpa": "泡温泉",
+				"enjoyText1": [
+					{
+						"con": "第一步：淋浴，泡汤可不是泡澡，首先就要淋浴，同时给身体适应的时间"
+					},
+					{
+						"con": "第二步：淋泉水，泡汤切忌一下跃入汤池，很容易发生头晕。可先做在汤池边从脚淋起，全身都要用温泉水润湿，可预防脑贫血的发生。"
+					},
+					{
+						"con": "第三步：泡温泉，慢慢地进入汤池，刚开始只泡到胸口部分，约浸个3-5分钟左右，全身都暖活起来后，再慢慢泡到肩膀高度。期间要注意多补充水分。"
+					},{
+						"con": "第四步：泡温泉之后建议进行淋浴，避免引起皮肤过敏等不适。"
+					}
+				]
+			},
+			{
+				"id": "000000000002",
+				"enjoySpa": "准备事项",
+				"enjoyText1": [
+					{
+						"con": "1.泳衣拖鞋等个人物品要提前准备好，爱美的小仙女们护肤品也是必不可少的。"
+					},
+					{
+						"con": "2.心爱的首饰在泡温泉前要取下收好，温泉会对金属物品有氧化腐蚀的作用。"
+					},
+					{
+						"con": "3.戴隐形眼睛的小伙伴最好在泡温泉时取下隐形，否则容易引起眼部干燥不适。"
+					},{
+						"con": "4.饭前饭后两小时最好不要泡温泉，容易发生低血糖和头晕。"
+					}
+				]
+			},
+			{
+				"id": "000000000003",
+				"enjoySpa": "【什么情况不能泡】",
+				"enjoyText1": [
+					{
+						"con": "1.心血管方面疾病患者容易发生危险要谨慎泡温泉；"
+					},
+					{
+						"con": "2.过于疲劳和饮酒过量者泡温泉易产生更多不适；"
+					},
+					{
+						"con": "3.严重皮肤病病及破损可能会发生继发感染；"
+					},{
+						"con": "4.患有眼疾的患者不宜泡温泉。"
+					}
+				]
+			}
+		]
+	}
+}

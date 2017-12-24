@@ -2,12 +2,12 @@
 	<div class="main-comment">
     <div class="comment-left">
       <span class="comment-icon"></span>
-      <span class="comment-level">★★★★★</span>
+      <span class="iconfont comment-level">&#xe615;&#xe615;&#xe615;&#xe615;&#xe615;</span>
       <span class="comment-score">5分</span>
     </div>
     <div class="comment-right">
        <span class="comment-totalnum">9999999评论</span>
-       <i class="iconfont">&#xe720;</i>
+       <i class="iconfont">&#xe600;</i>
     </div>
   </div>
 </template>
@@ -50,5 +50,8 @@
     font-size: .28rem;
     margin-left: .16rem;
     color: #9e9e9e;
+  }
+  .comment-level {
+    color: #ffb436;
   }
 </style>

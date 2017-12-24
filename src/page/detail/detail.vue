@@ -15,9 +15,9 @@
       <main-comment></main-comment>
 
       <div class="main-announce">
-        <i class="iconfont announce-icon">&#xe720;</i>
+        <i class="iconfont announce-icon">&#xe621;</i>
         <span class="announce-txt">{{mainview.announce}}</span>
-        <i class="iconfont announce-icon">&#xe720;</i>
+        <i class="iconfont announce-icon">&#xe600;</i>
       </div>
 
       <div class="main-list">

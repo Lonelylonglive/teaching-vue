@@ -5,11 +5,11 @@
     <div class="comment-con" v-for="item in mainview.comment">
       <img src="../../../static/img/highQualityComment1.png" class="watermark">
       <div class="comment-level">
-        <span class="comment-star">★★★★★</span>
+        <span class="comment-star iconfont">&#xe615;&#xe615;&#xe615;&#xe615;&#xe615;</span>
         <span class="comment-user">{{item.user}} {{item.date}}</span>
       </div>
       <p class="comment-txt">{{item.text}}</p>
-      <div class="comment-txtextend iconfont">&#xe720</div>
+      <div class="comment-txtextend iconfont">&#xe6a6;</div>
       <ul class="comment-img">
         <li v-for="(imgitem, index) in item.imgUrl" :key="index" class="comment-imgli" v-show="index>5?false:true">
           <img :src="imgitem" alt="图片加载失败">
@@ -21,7 +21,7 @@
     </div>
     <div class="comment-all">
       查看全部评论
-      <em class="iconfont">&#xe720</em>
+      <em class="iconfont">&#xe6a6;</em>
     </div>
   </div>
 </div>
@@ -76,7 +76,7 @@
   }
   .comment-star {
     color: #ffb436;
-    font-size: .4rem;
+    font-size: .3rem;
   }
   .comment-user {
     width: 3rem;

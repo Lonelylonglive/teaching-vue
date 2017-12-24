@@ -12,7 +12,7 @@
             <span class="txt-price"><i>&yen;</i><em class="pricenum">{{item.lowerprice}}</em><b class="start">起</b></span>
           </div>
           <div class="txt-bottom">
-            <p><em class="star">★★★★★</em><i class="commentnum">{{item.commentnum}}条评论</i></p>
+            <p><em class="star iconfont">&#xe615;&#xe615;&#xe615;&#xe615;&#xe615;</em><i class="commentnum">{{item.commentnum}}条评论</i></p>
             <div class="address">{{item.address}}</div>
           </div>
         </div>
@@ -95,7 +95,7 @@
   }
   .star {
     color: #ffb436;
-    font-size: .4rem;
+    font-size: .3rem;
   }
   .commentnum {
     margin-left: .1rem;

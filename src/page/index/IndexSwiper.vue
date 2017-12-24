@@ -1,9 +1,9 @@
 <template>
 	<swiper :options="swiperOption" class="swiper-img-con">
     <swiper-slide v-for="item in swiperInfo" :key="item.id">
-      <div class="swiper-img-con">
+      <router-link class="swiper-img-con" to="/disacount">
         <img  class="swiper-img" :src="item.imgUrl"/>
-      </div>
+      </router-link>
     </swiper-slide>
     <div class="swiper-pagination"  slot="pagination"></div>
   </swiper>

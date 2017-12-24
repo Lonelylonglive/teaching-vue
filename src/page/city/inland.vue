@@ -1,5 +1,6 @@
 <template>
   <div>
+    <search :inlandAllCity ="allCity"></search> 
     <div class="content">
         <div class="place"><h3 class="title">您的位置</h3></div>
         <div class="my-place">
@@ -33,6 +34,7 @@
 
 <script>
   import {mapState, mapMutations} from 'vuex'
+  import Search from './search'
 
   export default {
     props: {
@@ -42,6 +44,9 @@
       allCity: {
         type: Array
       }
+    },
+    components: {
+      Search
     },
     computed: {
       ...mapState(['city'])
@@ -83,7 +88,7 @@
     background: #fff;
   }
   .position {
-    width: 1.7rem;
+    width: 25%;
     height: .6rem;
     border: 1px solid #00afcd;
     border-radius: .1rem;
@@ -107,7 +112,7 @@
     background: #fff;
   }
   .city-list {
-    width: 1.7rem;
+    width: 25%;
     height: .6rem;
     margin: .2rem;
     border: 1px solid #cdcdcd;

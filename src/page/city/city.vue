@@ -1,9 +1,7 @@
 <template>
   <div>
     <header class="header" >
-      <div>
-        <router-link to="/" class="area iconfont back">&#xe720;</router-link>
-      </div>
+      <router-link to="/" class="area iconfont back">&#xe720;</router-link>
       <h2 class="classify">
         <div class="classify-box">
           <span class="inload" @click="handleInlandBtn" :class='[{inloadColor:!inlandFlag}]'>国内</span><span class="foreign" @click="handleForeignBtn" :class='[{foreignColor:foreignFlag}]'>海外</span>
@@ -11,25 +9,18 @@
       </h2>
     </header>
     
-    <div class="search">
-      <input class="search-con" type="text" :placeholder="hint" ref="search" @focus="handleInputFocus" @blur="handleInputBlur" v-model="content">
-    </div>
-
+ 
     <inland :hotCity="inlandHotCity" :allCity="inlandAllCity" v-if="inlandFlag"></inland>
 
     <Foreign :hotCity="foreignHotCity" :allCity="foreignAllCity" v-if="foreignFlag"></Foreign>
 
-    <div class="search-container" v-if="searchFlag">
-      <ul>
-        <li class="search-list" v-for="(item,index) in getSearchData" :key="index">{{item.chinese}}</li>
-      </ul>
-    </div>
   </div>
 </template>
 
 <script>
   import Inland from './inland'
   import Foreign from './foreign'
+
   export default {
     created () {
       this.getCityData()
@@ -44,25 +35,8 @@
         inlandAllCity: [],
         foreignHotCity: [],
         foreignAllCity: [],
-        hint: '输入城市名或拼音',
         inlandFlag: true,
-        foreignFlag: false,
-        searchFlag: false,
-        content: ''
-      }
-    },
-    computed: {
-      getSearchData () {
-        const SearchData = []
-        this.inlandAllCity.forEach((value, index) => {
-          value.cityList.forEach((value, index) => {
-            let reg = new RegExp(this.content, 'g')
-            if (reg.test(value.spell) || reg.test(value.chinese)) {
-              SearchData.push(value)
-            }
-          })
-        })
-        return SearchData
+        foreignFlag: false
       }
     },
     methods: {
@@ -86,22 +60,6 @@
       handleForeignBtn () {
         this.inlandFlag = false
         this.foreignFlag = true
-      },
-      handleInputFocus () {
-        this.hint = ''
-        this.$refs.search.style.textAlign = 'left'
-      },
-      handleInputBlur () {
-        this.$refs.search.style.textAlign = 'center'
-      }
-    },
-    watch: {
-      content () {
-        if (this.content) {
-          this.searchFlag = true
-        } else {
-          this.searchFlag = false
-        }
       }
     }
   }
@@ -115,8 +73,10 @@
     height: .88rem;
     background: #00afc7;
     color: #fff;
+    display: flex;
   }
   .back {
+    position: absolute;
     width: .8rem;
     float: left;
     padding: 0 .1rem;
@@ -127,12 +87,14 @@
   .classify {
     display: flex;
     align-items: center;
+    justify-content: center;
     float: left;
     height: .88rem;
+    flex: 1;
   }
   .classify-box {
     display: flex;
-    margin-left: .42rem;
+    justify-content: center;
     width: 4.08rem;
     height: .6rem;
     line-height: .6rem;

@@ -6,7 +6,7 @@
     <div class="detail-info">
       <div class="detail-tittle">{{mainview.name}}</div>
       <div class="detail-imgnum">
-        <span class="imgnum-icon"></span>
+        <span class="iconfont img">&#xe6ba;</span>
         <em class="num">{{viewImg.length}}</em>
       </div>
     </div>
@@ -26,6 +26,11 @@
   }
   .detail-img img{
     width: 100%;
+  }
+  .img {
+    color: #ccc;
+    font-size: .2rem;
+    margin-right: .1rem; 
   }
   .detail-info {
     display: flex;

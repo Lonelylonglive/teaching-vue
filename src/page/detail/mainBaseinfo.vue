@@ -5,15 +5,15 @@
       <p class="detail-addrtxt">
         <em class="iconfont position">&#xe6ec;</em>
         <span class="addrtxt">{{mainview.address}}</span>
-        <em class="iconfont position">&#xe6ec;</em>
+        <em class="iconfont position">&#xe600;</em>
       </p>
     </div>
 
     <div class="findviewtime">
       <p class="detail-addrtxt">
-        <span class="address-icon"></span>
+        <span class="iconfont img">&#xe6ba;</span>
         <span class="addrtxt">查看景点及开放时间</span>
-        <em class="iconfont position">&#xe6ec;</em>
+        <em class="iconfont position">&#xe600;</em>
       </p>
     </div>
 
@@ -44,6 +44,10 @@
   }
   .detail-addrtxt {
     display: flex;
+  }
+  .img {
+    color: #666;
+    font-size: .3rem;
   }
   .addrtxt {
     flex:1;

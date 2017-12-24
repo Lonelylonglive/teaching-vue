@@ -11,11 +11,11 @@
           <em>&yen;</em>
           <span class="ticket-num">{{timesitem.lowerprice}}</span>
           <i>起</i>
-          <b class="back iconfont">&#xe720;</b>
+          <b class="back iconfont">&#xe6a6;</b>
         </div>
       </div>
       <div class="morepro border-top" @click="extend" v-if="item.show">
-        <p>查看更多产品<i class="back iconfont">&#xe720;</i></p>
+        <p>查看更多产品<i class="back iconfont">&#xe6a6;</i></p>
       </div>
     </div>
   </div>

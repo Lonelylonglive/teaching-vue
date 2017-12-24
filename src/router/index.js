@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/page/index/index'
+import Disacount from '@/page/acount/disacount'
 import City from '@/page/city/city'
 import Detail from '@/page/detail/detail'
 import OneTour from '@/page/OneTour/OneTour'
+import Spa from '@/page/Spa/Spa'
 
 Vue.use(Router)
 
@@ -24,5 +26,13 @@ export default new Router({
     path: '/OneTour',
     name: 'OneTour',
     component: OneTour
+  }, {
+    path: '/Spa',
+    name: 'Spa',
+    component: Spa
+  }, {
+    path: '/disacount',
+    name: 'disacount',
+    component: Disacount
   }]
 })

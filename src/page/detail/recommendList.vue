@@ -14,15 +14,15 @@
         <p class="route">{{item.route}}</p>
         <p>
           <span class="shopdesc">
-            <em class="iconfont position">&#xe6ec;</em>
+            <em class="iconfont position">&#xe66d;</em>
             可定明日
           </span>
           <span class="shopdesc">
-            <em class="iconfont position">&#xe6ec;</em>
+            <em class="iconfont position">&#xe601;</em>
             无购物
           </span>
           <span class="shopdesc">
-            <em class="iconfont position">&#xe6ec;</em>
+            <em class="iconfont position">&#xe601;</em>
             无自费
           </span>
         </p>
