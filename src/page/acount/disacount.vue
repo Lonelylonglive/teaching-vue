@@ -1,13 +1,13 @@
 <template>
   <div>
-    <qunar-title></qunar-title>
+    <qunar-title v-show="showFlag" @show="show"></qunar-title>
     <div class="header">
-      <div class="back iconfont">&#xe624;</div>
+      <router-link to="/" class="back iconfont">&#xe720;</router-link>
       <div class="nowAcount">银联立减</div>
-      <div class="indexPage">
-        <p class="iconfont">&#xe608;</p>
+      <router-link to='/' class="indexPage">
+        <p class="iconfont">&#xe611;</p>
         <p>首页</p>
-      </div>
+      </router-link>
     </div>
     <div class="acountCon">
       <img src="//s.qunarzz.com/piao_topic/image/touch/custom/2017/2578unionpay11/banner.jpg" alt="">
@@ -36,7 +36,8 @@ export default {
   data () {
     return {
       entranceInfo: [],
-      ruleInfo: []
+      ruleInfo: [],
+      showFlag: true
     }
   },
   methods: {
@@ -50,6 +51,9 @@ export default {
         this.entranceInfo = body.data.entrance
         this.ruleInfo = body.data.ruleCon
       }
+    },
+    show (showFlag) {
+      this.showFlag = showFlag
     }
   },
   created () {
@@ -93,20 +97,24 @@ export default {
     width: 100%;
   }
   .instruction{
-    width: 100%;
     position: absolute;
     bottom: 0;
     display: flex;
     justify-content: center; 
+    width: 100%;
   }
   .instruction p{
-    width: 75%;
-    height: .84rem;
-    font-size: .16rem;
+    width: 77%;
+    height: 1rem;
+    font-size: .22rem;
     color: #b37700;
-    padding: .1rem .1rem 0 .2rem;
+    padding: .2rem;
     background: #ffcc00;
     border-radius: .1rem;
+   /*  display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 3;
+   overflow: hidden; */
   }
   .rule{
     background: #fc8600;

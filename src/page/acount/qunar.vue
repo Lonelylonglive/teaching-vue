@@ -8,14 +8,36 @@
         <span class="qunar">去哪儿旅行</span>
         <span class="choice">超过<i>4.6亿</i>人的聪明选择</span>
       </div>
-      <div class="close"><img src="//source.qunarzz.com/site/images/wap/touch/images/v2/images1x/modifydelete.png" alt="" class="closeImg"></div>
-      <div class="download">下载客户端</div>
+      <div class="close" @click="handleCloseClick"><img src="//source.qunarzz.com/site/images/wap/touch/images/v2/images1x/modifydelete.png" alt="" class="closeImg"></div>
+      <div class="download" @click="handleDownloadClick">下载客户端</div>
     </div>
   </div>
 </template>
 <script>
   export default {
-
+    data () {
+      return {
+        showFlag: true
+      }
+    },
+    methods: {
+      handleCloseClick () {
+        this.showFlag = false
+        this.$emit('show', this.showFlag)
+      },
+      handleDownloadClick () {
+        const u = navigator.userAgent
+        const isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1
+        const isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
+        if (isAndroid) {
+          location.href = 'https://touch.qunar.com/h5/download?bd_source=qunar'
+          return
+        }
+        if (isiOS) {
+          location.href = 'https://itunes.apple.com/cn/app/id395096736'
+        }
+      }
+    }
   }
 </script>
 <style scoped>
